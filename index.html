@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moharek</title>
+
+    <link rel="icon" type="image/x-icon" href="images/logo-fav.png" />
+
+    <!-- Bootstrap link  -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+    />
+
+    <!-- font awesom link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- owl-carousel link -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+
+    <!-- WoW link -->
+    <link rel="stylesheet" href="css/animate.css" />
+
+    <!-- animate link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- custom css file link  -->
+    <!-- <link rel="stylesheet" href="css/style-ltr.css"> -->
+  </head>
+  <body>
+    <!-- -------- loading ----------- -->
+
+    <div id="loading">
+      <div class="loader">
+        <img src="images/logo-fav.png" alt="" />
+      </div>
+    </div>
+
+    <!-- -------- loading ends ----------- -->
+
+    <nav class="navbar navbar-expand-lg navbar-light top-0">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand m-0" href="index.html">
+          <img src="images/logo.svg" alt="" />
+        </a>
+        <div
+          class="collapse navbar-collapse justify-content-between align-items-center"
+        >
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a href="" class="nav-link active"> الرئيسية</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link"> الخدمات</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link">السيارات</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link"> الورش</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link">بيع سيارتك</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link">حجز فحص</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link">المقالات</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link">تواصل معنا</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav m-0">
+            <li class="nav-item lang">
+              <a href="" class="nav-link" id="lang">EN</a>
+            </li>
+
+            <li class="nav-item auth">
+              <a href="" class="nav-link">
+                <i class="fa-regular fa-user"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header style="background: url('images/header-bg.png')">
+      <div class="container-fluid h-100">
+        <div class="content">
+          <h1>وجهتك المتكاملة للسيارات: بيع، شراء، وحجز صيانة</h1>
+          <p>
+            وقع محرك يوفر لك كل ما تحتاجه في عالم السيارات، من بيع وشراء
+            السيارات الجديدة والمستعملة إلى حجز خدمات الصيانة والفحص السريع مع
+            أفضل الورش والمختصين
+          </p>
+          <div>
+            <a href="" class="main-btn"> السيارات</a>
+            <a href="" class="lite-blue-btn">الورش</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- السيارات -->
+    <section class="cars pt-5 my-5">
+      <div class="container-fluid">
+        <h2 class="title">السيارات</h2>
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="pills-newCars-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-newCars"
+              type="button"
+              role="tab"
+              aria-controls="pills-newCars"
+              aria-selected="true"
+            >
+              سيارات جديدة
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="pills-oldCars-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-oldCars"
+              type="button"
+              role="tab"
+              aria-controls="pills-oldCars"
+              aria-selected="false"
+            >
+              سيارات مستعملة
+            </button>
+          </li>
+        </ul>
+        <div class="tab-content py-4 mb-4" id="pills-tabContent">
+          <div
+            class="tab-pane fade show active"
+            id="pills-newCars"
+            role="tabpanel"
+            aria-labelledby="pills-newCars-tab"
+          >
+            <div class="row g-3">
+              <div class="col-6 col-md-4 col-lg-3">
+                <div class="card">
+                  <a href="" class="link"></a>
+                  <div class="card-img-top">
+                    <img src="images/06.jpg" alt="" />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">جيتور 2023 Luxury X70</h5>
+                    <p class="price">
+                      <span>51,000</span>
+                      <span>ريال</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <div class="card">
+                  <a href="" class="link"></a>
+                  <div class="card-img-top">
+                    <img src="images/01.jpg" alt="" />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">جيتور 2023 Luxury X70</h5>
+                    <p class="price">
+                      <span>51,000</span>
+                      <span>ريال</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <div class="card">
+                  <a href="" class="link"></a>
+                  <div class="card-img-top">
+                    <img src="images/02.jpg" alt="" />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">جيتور 2023 Luxury X70</h5>
+                    <p class="price">
+                      <span>51,000</span>
+                      <span>ريال</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <div class="card">
+                  <a href="" class="link"></a>
+                  <div class="card-img-top">
+                    <img src="images/03.jpg" alt="" />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">جيتور 2023 Luxury X70</h5>
+                    <p class="price">
+                      <span>51,000</span>
+                      <span>ريال</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <div class="card">
+                  <a href="" class="link"></a>
+                  <div class="card-img-top">
+                    <img src="images/06.jpg" alt="" />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">جيتور 2023 Luxury X70</h5>
+                    <p class="price">
+                      <span>51,000</span>
+                      <span>ريال</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <div class="card">
+                  <a href="" class="link"></a>
+                  <div class="card-img-top">
+                    <img src="images/01.jpg" alt="" />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">جيتور 2023 Luxury X70</h5>
+                    <p class="price">
+                      <span>51,000</span>
+                      <span>ريال</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <div class="card">
+                  <a href="" class="link"></a>
+                  <div class="card-img-top">
+                    <img src="images/02.jpg" alt="" />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">جيتور 2023 Luxury X70</h5>
+                    <p class="price">
+                      <span>51,000</span>
+                      <span>ريال</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <div class="card">
+                  <a href="" class="link"></a>
+                  <div class="card-img-top">
+                    <img src="images/03.jpg" alt="" />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">جيتور 2023 Luxury X70</h5>
+                    <p class="price">
+                      <span>51,000</span>
+                      <span>ريال</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="pills-oldCars"
+            role="tabpanel"
+            aria-labelledby="pills-oldCars-tab"
+          >
+            <div class="row g-3 py-4">
+              <div class="col-6 col-md-4 col-lg-3">
+                <div class="card">
+                  <a href="" class="link"></a>
+                  <div class="card-img-top">
+                    <img src="images/06.jpg" alt="" />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">جيتور 2023 Luxury X70</h5>
+                    <p class="price">
+                      <span>51,000</span>
+                      <span>ريال</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <div class="card">
+                  <a href="" class="link"></a>
+                  <div class="card-img-top">
+                    <img src="images/01.jpg" alt="" />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">جيتور 2023 Luxury X70</h5>
+                    <p class="price">
+                      <span>51,000</span>
+                      <span>ريال</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <div class="card">
+                  <a href="" class="link"></a>
+                  <div class="card-img-top">
+                    <img src="images/02.jpg" alt="" />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">جيتور 2023 Luxury X70</h5>
+                    <p class="price">
+                      <span>51,000</span>
+                      <span>ريال</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <div class="card">
+                  <a href="" class="link"></a>
+                  <div class="card-img-top">
+                    <img src="images/03.jpg" alt="" />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">جيتور 2023 Luxury X70</h5>
+                    <p class="price">
+                      <span>51,000</span>
+                      <span>ريال</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  all cars link -->
+        <div class="w-100 text-center">
+          <a
+            href=""
+            class="main-btn text-center wow animate__animated animate__flipInY animate__slow"
+            >كل السيارات</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- عروض السيارات -->
+    <section class="cars car_offers py-5 my-5">
+      <h2 class="title mb-5">العروض</h2>
+      <div class="container-fluid" style="padding-inline-end: 0 !important">
+        <div class="owl-carousel">
+          <div class="card">
+            <a href="" class="link"></a>
+            <div class="card-img-top">
+              <img src="images/06.jpg" alt="" />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">جيتور 2023 Luxury X70</h5>
+              <p class="price">
+                <span>51,000</span>
+                <span>ريال</span>
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <a href="" class="link"></a>
+            <div class="card-img-top">
+              <img src="images/01.jpg" alt="" />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">جيتور 2023 Luxury X70</h5>
+              <p class="price">
+                <span>51,000</span>
+                <span>ريال</span>
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <a href="" class="link"></a>
+            <div class="card-img-top">
+              <img src="images/03.jpg" alt="" />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">جيتور 2023 Luxury X70</h5>
+              <p class="price">
+                <span>51,000</span>
+                <span>ريال</span>
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <a href="" class="link"></a>
+            <div class="card-img-top">
+              <img src="images/01.jpg" alt="" />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">جيتور 2023 Luxury X70</h5>
+              <p class="price">
+                <span>51,000</span>
+                <span>ريال</span>
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <a href="" class="link"></a>
+            <div class="card-img-top">
+              <img src="images/06.jpg" alt="" />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">جيتور 2023 Luxury X70</h5>
+              <p class="price">
+                <span>51,000</span>
+                <span>ريال</span>
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <a href="" class="link"></a>
+            <div class="card-img-top">
+              <img src="images/01.jpg" alt="" />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">جيتور 2023 Luxury X70</h5>
+              <p class="price">
+                <span>51,000</span>
+                <span>ريال</span>
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <a href="" class="link"></a>
+            <div class="card-img-top">
+              <img src="images/03.jpg" alt="" />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">جيتور 2023 Luxury X70</h5>
+              <p class="price">
+                <span>51,000</span>
+                <span>ريال</span>
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <a href="" class="link"></a>
+            <div class="card-img-top">
+              <img src="images/01.jpg" alt="" />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">جيتور 2023 Luxury X70</h5>
+              <p class="price">
+                <span>51,000</span>
+                <span>ريال</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--  all offer link -->
+        <div class="w-100 text-center mt-4">
+          <a
+            href=""
+            class="main-btn text-center wow animate__animated animate__flipInY animate__slow"
+          >
+            جميع العروض</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ماركة السيارات -->
+    <section class="car_brand py-5 my-5">
+      <h2 class="title mb-5">تصفح السيارات حسب الماركة</h2>
+      <div class="container-fluid" style="padding-inline-end: 0 !important">
+        <div class="owl-carousel">
+          <div class="card">
+            <a href="" class="link"></a>
+            <div class="card-img-top">
+              <img src="images/35.png" alt="" />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">شيفورليه</h5>
+            </div>
+          </div>
+          <div class="card">
+            <a href="" class="link"></a>
+            <div class="card-img-top">
+              <img src="images/37.png" alt="" />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">شيفورليه</h5>
+            </div>
+          </div>
+          <div class="card">
+            <a href="" class="link"></a>
+            <div class="card-img-top">
+              <img src="images/38.png" alt="" />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">شيفورليه</h5>
+            </div>
+          </div>
+          <div class="card">
+            <a href="" class="link"></a>
+            <div class="card-img-top">
+              <img src="images/58.png" alt="" />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">شيفورليه</h5>
+            </div>
+          </div>
+          <div class="card">
+            <a href="" class="link"></a>
+            <div class="card-img-top">
+              <img src="images/60.png" alt="" />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">شيفورليه</h5>
+            </div>
+          </div>
+          <div class="card">
+            <a href="" class="link"></a>
+            <div class="card-img-top">
+              <img src="images/35.png" alt="" />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">شيفورليه</h5>
+            </div>
+          </div>
+          <div class="card">
+            <a href="" class="link"></a>
+            <div class="card-img-top">
+              <img src="images/37.png" alt="" />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">شيفورليه</h5>
+            </div>
+          </div>
+          <div class="card">
+            <a href="" class="link"></a>
+            <div class="card-img-top">
+              <img src="images/38.png" alt="" />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">شيفورليه</h5>
+            </div>
+          </div>
+          <div class="card">
+            <a href="" class="link"></a>
+            <div class="card-img-top">
+              <img src="images/58.png" alt="" />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">شيفورليه</h5>
+            </div>
+          </div>
+          <div class="card">
+            <a href="" class="link"></a>
+            <div class="card-img-top">
+              <img src="images/60.png" alt="" />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">شيفورليه</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-us pb-5 mb-5">
+      <div class="container-fluid">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-12 col-lg-6 mb-5 mb-lg-0">
+            <h2 class="about-title">
+              <span>محرك </span>
+              أفضل وأسرع موقع لخدمة سيارتك
+            </h2>
+            <p class="about-desc">
+              وقع محرك يوفر لك كل ما تحتاجه في عالم السيارات، من بيع وشراء
+              السيارات الجديدة والمستعملة إلى حجز خدمات الصيانة والفحص السريع مع
+              أفضل الورش والمختصين
+            </p>
+            <ul class="about-feature">
+              <li>
+                <span>1</span>
+                <h6>رؤيتنا</h6>
+                <p>
+                  وقع محرك يوفر لك كل ما تحتاجه في عالم السيارات، من بيع وشراء
+                  السيارات
+                </p>
+              </li>
+              <li>
+                <span>2</span>
+                <h6>هدفنا</h6>
+                <p>
+                  وقع محرك يوفر لك كل ما تحتاجه في عالم السيارات، من بيع وشراء
+                  السيارات
+                </p>
+              </li>
+              <li>
+                <span>3</span>
+                <h6>رسالتنا</h6>
+                <p>
+                  وقع محرك يوفر لك كل ما تحتاجه في عالم السيارات، من بيع وشراء
+                  السيارات
+                </p>
+              </li>
+            </ul>
+            <div class="w-100 mt-4">
+              <a href="" class="main-btn text-center"> المزيد </a>
+            </div>
+          </div>
+          <div class="col-12 col-lg-5">
+            <div
+              class="img-bg"
+            >
+              <img
+                src="images/about us.png"
+                class=""
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- الخدمات  -->
+    <section class="services my-5">
+      <div class="container-fluid">
+        <h4 class="title">الخدمات</h4>
+        <div class="row py-5">
+          <div class="col-6 col-md-3">
+            <div class="service">
+              <a href="" class="link"></a>
+              <div class="icon">
+                <img src="images/services1.svg" alt="" />
+              </div>
+              <h5>فحص كمبيوتر</h5>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="service">
+              <a href="" class="link"></a>
+              <div class="icon">
+                <img src="images/services2.svg" alt="" />
+              </div>
+              <h5>فحص هيكل</h5>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="service">
+              <a href="" class="link"></a>
+              <div class="icon">
+                <img src="images/services3.svg" alt="" />
+              </div>
+              <h5>فحص محرك</h5>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="service">
+              <a href="" class="link"></a>
+              <div class="icon">
+                <img src="images/services4.svg" alt="" />
+              </div>
+              <h5>فحص شامل</h5>
+            </div>
+          </div>
+        </div>
+        <div class="w-100 text-center mt-4">
+            <a href="" class="main-btn text-center"> كل الخدمات </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- اخر ورش الصيانة -->
+    <section>
+      <div class="container-fluid">
+        <div class="section-title">
+          <h6 class="wow animate__animated animate__flipInY animate__slow">
+            اخر ورش الصيانة المضافة <span>(الرياض)</span>
+          </h6>
+          <a
+            href=""
+            class="wow animate__animated animate__heartBeat animate__slow"
+            >كل الورش</a
+          >
+        </div>
+        <div class="row">
+          <div
+            class="col-6 col-md-4 mb-5 wow animate__animated animate__bounceInUp animate__slow"
+          >
+            <div class="workshop">
+              <a href="" class="router-link"></a>
+              <img src="images/HOME/shop1.png" alt="" />
+              <div class="details">
+                <h6>ورشة فهد بلال</h6>
+                <span><i class="bi bi-geo-alt"></i> الرياض</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-6 col-md-4 mb-5 wow animate__animated animate__bounceInUp animate__slow"
+          >
+            <div class="workshop">
+              <a href="" class="router-link"></a>
+              <img src="images/HOME/shop1.png" alt="" />
+              <div class="details">
+                <h6>ورشة فهد بلال</h6>
+                <span><i class="bi bi-geo-alt"></i> الرياض</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-6 col-md-4 mb-5 wow animate__animated animate__bounceInUp animate__slow"
+          >
+            <div class="workshop">
+              <a href="" class="router-link"></a>
+              <img src="images/HOME/shop1.png" alt="" />
+              <div class="details">
+                <h6>ورشة فهد بلال</h6>
+                <span><i class="bi bi-geo-alt"></i> الرياض</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-6 col-md-4 mb-5 wow animate__animated animate__bounceInUp animate__slow"
+          >
+            <div class="workshop">
+              <a href="" class="router-link"></a>
+              <img src="images/HOME/shop1.png" alt="" />
+              <div class="details">
+                <h6>ورشة فهد بلال</h6>
+                <span><i class="bi bi-geo-alt"></i> الرياض</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-6 col-md-4 mb-5 wow animate__animated animate__bounceInUp animate__slow"
+          >
+            <div class="workshop">
+              <a href="" class="router-link"></a>
+              <img src="images/HOME/shop1.png" alt="" />
+              <div class="details">
+                <h6>ورشة فهد بلال</h6>
+                <span><i class="bi bi-geo-alt"></i> الرياض</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-6 col-md-4 mb-5 wow animate__animated animate__bounceInUp animate__slow"
+          >
+            <div class="workshop">
+              <a href="" class="router-link"></a>
+              <img src="images/HOME/shop1.png" alt="" />
+              <div class="details">
+                <h6>ورشة فهد بلال</h6>
+                <span><i class="bi bi-geo-alt"></i> الرياض</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container-fluid contact-representative">
+        <div class="row justify-content-between align-items-center">
+          <div
+            class="col-12 col-lg-4 align-self-start mb-4 mb-lg-0 wow animate__animated animate__fadeInRight animate__slow"
+          >
+            <h5>تواصل مع مندوب</h5>
+            <p>يمكنك التواصل مع مندوب في حالة تعرض سيارتك لعطل على الطريق</p>
+            <a href="" class="lite-blue-btn">تواصل مع مندوب فحص</a>
+          </div>
+          <div
+            class="col-12 col-lg-6 wow animate__animated animate__fadeInLeft animate__slow"
+          >
+            <img src="images/HOME/Mask Group 1.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container-fluid">
+        <div class="section-title">
+          <h6 class="wow animate__animated animate__flipInY animate__slow">
+            اخر عروض ورش الصيانة <span>(الرياض)</span>
+          </h6>
+          <a
+            href=""
+            class="wow animate__animated animate__heartBeat animate__slow"
+            >كل العروض</a
+          >
+        </div>
+
+        <div class="row align-items-center">
+          <div
+            class="col-12 col-md-4 mb-4 wow animate__animated animate__bounceInUp animate__slow"
+          >
+            <div class="workshop-offer">
+              <a href="" class="router-link"></a>
+              <span
+                >من 20 الى 27 <br />
+                ديسمبر</span
+              >
+              <img src="images/HOME/offer 1.png" alt="" />
+              <div class="details">
+                <div class="d-flex align-items-center">
+                  <div class="img-bg">
+                    <img src="images/HOME/Group 115.png" alt="" />
+                  </div>
+                  <p>ورشة أبو مازن (الرياض)</p>
+                </div>
+                <h6>
+                  فحص شامل على كامل السيارة <br />
+                  ب 300 ريال
+                </h6>
+                <a href="" class="lite-blue-btn">احجز الان</a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-12 col-md-4 mb-4 wow animate__animated animate__bounceInUp animate__slow"
+          >
+            <div class="workshop-offer">
+              <a href="" class="router-link"></a>
+              <span
+                >من 20 الى 27 <br />
+                ديسمبر</span
+              >
+              <img src="images/HOME/offer 1.png" alt="" />
+              <div class="details">
+                <div class="d-flex align-items-center">
+                  <div class="img-bg">
+                    <img src="images/HOME/Group 115.png" alt="" />
+                  </div>
+                  <p>ورشة أبو مازن (الرياض)</p>
+                </div>
+                <h6>
+                  فحص شامل على كامل السيارة <br />
+                  ب 300 ريال
+                </h6>
+                <a href="" class="lite-blue-btn">احجز الان</a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-12 col-md-4 mb-4 wow animate__animated animate__bounceInUp animate__slow"
+          >
+            <div class="workshop-offer">
+              <a href="" class="router-link"></a>
+              <span
+                >من 20 الى 27 <br />
+                ديسمبر</span
+              >
+              <img src="images/HOME/offer 1.png" alt="" />
+              <div class="details">
+                <div class="d-flex align-items-center">
+                  <div class="img-bg">
+                    <img src="images/HOME/Group 115.png" alt="" />
+                  </div>
+                  <p>ورشة أبو مازن (الرياض)</p>
+                </div>
+                <h6>
+                  فحص شامل على كامل السيارة <br />
+                  ب 300 ريال
+                </h6>
+                <a href="" class="lite-blue-btn">احجز الان</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ads-section">
+      <div class="container-fluid">
+        <div class="section-title">
+          <h6 class="wow animate__animated animate__flipInY animate__slow">
+            آخر الإعلانات المضافة <span>(الرياض)</span>
+          </h6>
+          <a
+            href=""
+            class="wow animate__animated animate__heartBeat animate__slow"
+            >كل الإعلانات</a
+          >
+        </div>
+
+        <div
+          class="owl-carousel pb-5 pt-4 wow animate__animated animate__bounceInUp animate__slow"
+        >
+          <div class="ad">
+            <a href="" class="router-link"></a>
+            <a href="javascript:void(0);" class="heart fav">
+              <i class="bi bi-heart-fill"></i>
+            </a>
+            <span>5 &nbsp; <i class="bi bi-images"></i></span>
+            <img src="images/HOME/Rectangle 8.png" alt="" />
+            <div class="details">
+              <p>505,00 ر.س</p>
+              <h6>تويوتا لاندكروزر 2005</h6>
+              <span><i class="bi bi-geo-alt"></i> الموقع يكتب هنا</span>
+            </div>
+          </div>
+          <div class="ad">
+            <a href="" class="router-link"></a>
+            <a href="javascript:void(0);" class="heart">
+              <i class="bi bi-heart-fill"></i>
+            </a>
+            <span>5 &nbsp; <i class="bi bi-images"></i></span>
+            <img src="images/HOME/Rectangle 8.png" alt="" />
+            <div class="details">
+              <p>505,00 ر.س</p>
+              <h6>تويوتا لاندكروزر 2005</h6>
+              <span><i class="bi bi-geo-alt"></i> الموقع يكتب هنا</span>
+            </div>
+          </div>
+          <div class="ad">
+            <a href="" class="router-link"></a>
+            <a href="javascript:void(0);" class="heart fav">
+              <i class="bi bi-heart-fill"></i>
+            </a>
+            <span>5 &nbsp; <i class="bi bi-images"></i></span>
+            <img src="images/HOME/Rectangle 8.png" alt="" />
+            <div class="details">
+              <p>505,00 ر.س</p>
+              <h6>تويوتا لاندكروزر 2005</h6>
+              <span><i class="bi bi-geo-alt"></i> الموقع يكتب هنا</span>
+            </div>
+          </div>
+          <div class="ad">
+            <a href="" class="router-link"></a>
+            <a href="javascript:void(0);" class="heart">
+              <i class="bi bi-heart-fill"></i>
+            </a>
+            <span>5 &nbsp; <i class="bi bi-images"></i></span>
+            <img src="images/HOME/Rectangle 8.png" alt="" />
+            <div class="details">
+              <p>505,00 ر.س</p>
+              <h6>تويوتا لاندكروزر 2005</h6>
+              <span><i class="bi bi-geo-alt"></i> الموقع يكتب هنا</span>
+            </div>
+          </div>
+          <div class="ad">
+            <a href="" class="router-link"></a>
+            <a href="javascript:void(0);" class="heart fav">
+              <i class="bi bi-heart-fill"></i>
+            </a>
+            <span>5 &nbsp; <i class="bi bi-images"></i></span>
+            <img src="images/HOME/Rectangle 8.png" alt="" />
+            <div class="details">
+              <p>505,00 ر.س</p>
+              <h6>تويوتا لاندكروزر 2005</h6>
+              <span><i class="bi bi-geo-alt"></i> الموقع يكتب هنا</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container-fluid footer-content">
+        <button id="scroll-top"><i class="bi bi-chevron-double-up"></i></button>
+        <div class="links row justify-content-between">
+          <div
+            class="col-12 col-md-6 mb-5 wow animate__animated animate__fadeInRight animate__slow"
+          >
+            <div class="logo">
+              <img src="images/HOME/logo.png" alt="" />
+            </div>
+            <p>
+              ومن هنا وجب على المصمم أن يضع نصوصا مؤقتة على التصميم ليظهر للعميل
+              الشكل كاملاً،دور مولد النص العربىن يوفر علىالمصمم عناء البحث عن نص
+              بديل لا علاقة الموضوع الذى يتحدث عنه التصميم فيظهر بشكل لا
+              يليق.هذا النص يمكن
+            </p>
+          </div>
+          <div
+            class="col-6 col-md-3 wow animate__animated animate__fadeInLeft animate__slow"
+          >
+            <h5>روابط الموقع</h5>
+            <ul>
+              <li>
+                <a href=""><span></span> الرئيسية</a>
+              </li>
+              <li>
+                <a href=""><span></span> من نحن</a>
+              </li>
+              <li>
+                <a href=""><span></span> خدمات الورش</a>
+              </li>
+              <li>
+                <a href=""><span></span> طلب مندوب</a>
+              </li>
+              <li>
+                <a href=""><span></span> الإعلانات</a>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="col-6 col-md-3 wow animate__animated animate__fadeInLeft animate__slow"
+          >
+            <h5>روابط الموقع</h5>
+            <ul>
+              <li>
+                <a href=""><span></span> الدعم الفني</a>
+              </li>
+              <li>
+                <a href=""><span></span> تواصل معنا</a>
+              </li>
+              <li>
+                <a href=""><span></span> أسباب التعرض للحظر</a>
+              </li>
+              <li>
+                <a href=""><span></span> سياسة الخصوصية</a>
+              </li>
+              <li>
+                <a href=""><span></span> الشروط والأحكام</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="send-email">
+          <div class="row align-items-center">
+            <div class="col-12 col-lg-5 mb-4 mb-lg-0">
+              <p class="justify-content-center justify-content-lg-start">
+                <i class="bi bi-envelope-open-fill"></i> اكتب بريدك الإلكترونى
+                وتابع كل جديد
+              </p>
+            </div>
+            <div class="col-12 col-lg-7">
+              <div class="send-email-box">
+                <input type="text" placeholder="اكتب بريدك الالكترونى" />
+                <button>متابعة</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyrights">
+        <div class="container-fluid">
+          <span>سمارت فيجن لتصميم المواقع والتطبيقات</span>
+          <a href="https://smartvision4p.com" target="_blank">
+            <img src="images/HOME/smart vision logo.png" alt="" />
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery script -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+    <!-- owl-carousel script -->
+    <script src="js/owl.carousel.min.js"></script>
+
+    <!-- bootstrap script -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- font awesom script -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"
+      integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- wow script -->
+    <script src="js/wow.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
