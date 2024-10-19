@@ -638,12 +638,92 @@ header .content a {
    text-align: center;
 }
 
+.M_details{
+   display: flex; 
+   align-items: center;
+   justify-content: center;
+   gap: .5rem;
+   margin-bottom: 1rem;
+
+}
+
 .workshop .details h6 {
    font-size: 18px;
    color: var(--dark-sky-blue);
    font-weight: 700;
-   margin-bottom: 1rem;
+   margin-bottom: 0 !important;
 }
+
+.workshop .switch {
+   position: relative;
+   display: inline-block;
+   width: 65px;
+   height: 25px;
+ }
+ .workshop .switch input {
+   display: none;
+ }
+ .workshop .slider {
+   position: absolute;
+   cursor: pointer;
+   inset: 0;
+   background-color: #FCFCFC ;
+   -webkit-transition: .4s;
+   transition: .4s;
+ }
+ .workshop .slider:before {
+   position: absolute;
+   content: "";
+   height: 25px;
+   width: 25px;
+   left: 0px;
+   bottom: 0px;
+   background: #FF5A5A;
+   box-shadow: inset 0px 3px 6px #00000059;
+   -webkit-transition: .4s;
+   transition: .4s;
+ }
+ .workshop input:checked + .slider:before{
+   background-color: #2ab934;
+ }
+ .workshop input:checked + .slider:before {
+   -webkit-transform: translateX(40px);
+   -ms-transform: translateX(40px);
+   transform: translateX(40px);
+ }
+ /*------ ADDED CSS ---------*/
+ .workshop .on {
+   display: none;
+ }
+ .workshop .on, .off {
+    color: #111;
+    position: absolute;
+    /* transform: translate(-50%, -50%); */
+    top: 5px;
+    inset-inline-start: 16px;
+    font-size: 12px;
+    font-family: Verdana, sans-serif;
+    user-select:none;
+   }
+   .workshop input:checked + .slider .on {
+    inset-inline-start: calc(100% - 30px);
+   display: block;
+ }
+ .workshop input:checked + .slider .off {
+   display: none;
+ }
+ 
+ /*--------- END --------*/
+ 
+ /* Rounded sliders */
+ .workshop .slider.round {
+   border-radius: 34px;
+ }
+ 
+ .workshop .slider.round:before {
+   border-radius: 50%;
+ }
+ 
 
 .workshop-details {
    background-color: #ffffff;
@@ -758,29 +838,36 @@ header .content a {
 
 
 
-/* ------------------  contact-representative ---------------------- */
+/* ------------------  check_book ---------------------- */
 
-.contact-representative {
-   background: var(--dark-sky-blue);
+.check_book {
+   background: #FAFAFA;
+   padding: 2.4rem 2.6rem;
+   border-radius: 10px;
+}
+
+.check_wrapper{
+  
    padding: 3rem 3rem 0 0;
    border-radius: 10px;
    overflow: hidden;
+   background: var(--dark-sky-blue);
 }
 
-.contact-representative h5 {
+.check_book h5 {
    font-size: 24px;
    color: #fff;
    font-weight: 600;
    margin-bottom: 0.8rem;
 }
 
-.contact-representative p {
+.check_book p {
    font-size: 16px;
    color: #fff;
    margin-bottom: 2rem;
 }
 
-.contact-representative a {
+.check_book a {
    font-size: 16px;
    font-weight: 700;
    transition: all 0.3s;
@@ -865,14 +952,6 @@ header .content a {
    z-index: 7;
 }
 
-.router-link {
-   position: absolute;
-   top: 0;
-   right: 0;
-   width: 100%;
-   height: 100%;
-   z-index: 6;
-}
 
 
 /* ---------------------- ads ----------------------- */
@@ -907,7 +986,7 @@ header .content a {
    box-shadow: -10px 10px 20px #0000001f;
 }
 
-.ad .heart {
+/* .ad .heart {
    width: 35px;
    height: 35px;
    display: flex;
@@ -926,7 +1005,7 @@ header .content a {
 .ad .heart.fav {
    color: rgb(222, 70, 70);
    background-color: rgb(255, 235, 235);
-}
+} */
 
 .ad>span {
    position: absolute;
@@ -940,8 +1019,8 @@ header .content a {
 }
 
 .ad img {
-   min-height: 12rem;
-   max-height: 12rem;
+   aspect-ratio: 9 / 6;
+   object-fit: cover;
 }
 
 .ad .details {
@@ -970,33 +1049,37 @@ header .content a {
 
 /* --------------------- footer --------------------- */
 
-footer {}
+
 
 footer .footer-content {
-   background: #fff;
-   border-radius: 20px;
+   background: #FCFCFC;
+   border-radius: 30px;
    padding: 4rem 2rem;
    margin-bottom: 1rem;
    position: relative;
 }
-
-footer .footer-content #scroll-top {
-   background-color: #fff;
+footer .footer-content #scroll-top{
+   position: absolute;
+   top: 0;
+   right: 50%;
+   transform: translate(50%, -50%);
+   background: #fff;
+   padding: 8px;
+   border-radius: 50%;
+   animation: floating 1s ease-out infinite alternate;
+   transition: all 0.3s;
+}
+footer .footer-content #scroll-top i{
+   background-color: #FCFCFC;
    width: 40px;
    height: 40px;
    display: flex;
    align-items: center;
    justify-content: center;
    font-size: 16px;
-   position: absolute;
-   top: 0;
-   right: 50%;
-   transform: translate(50%, -50%);
    border-radius: 50%;
-   box-shadow: 0px 3px 0px 6px #FCFCFC;
+   box-shadow: 0px -10px 25px #B2B2B22B;
    color: var(--dark-sky-blue);
-   animation: floating 1s ease-out infinite alternate;
-   transition: all 0.3s;
 }
 
 @keyframes floating {
@@ -1009,10 +1092,10 @@ footer .footer-content #scroll-top {
    }
 }
 
-footer .footer-content #scroll-top:hover {
+footer .footer-content #scroll-top i:hover {
    color: #fff;
    background-color: var(--dark-sky-blue);
-   transform: translate(50%, -60%);
+   /* transform: translate(50%, -60%); */
 }
 
 footer .footer-content .links {
@@ -1088,7 +1171,8 @@ footer .footer-content .links ul>li>a:hover span {
 }
 
 footer .send-email {
-   padding: 5%;
+   margin: 0 2rem;
+   padding: 3rem 3.5rem;
    background: #2777B2;
    border-radius: 10px;
 }
@@ -1146,6 +1230,7 @@ footer .send-email-box button:hover {
 }
 
 footer .copyrights {
+   position: relative;
    padding: 1rem 0;
 }
 
@@ -1424,7 +1509,7 @@ footer .copyrights img {
 
 @media (min-width: 768.8px) {}
 
-@media (max-width:991.8px) {
+/* @media (max-width:991.8px) {
 
    .top-nav {
       display: none;
@@ -1632,21 +1717,21 @@ footer .copyrights img {
       font-size: 11px;
    }
 
-   .contact-representative a {
+   .check_book a {
       font-size: 12px;
       padding: 7px 30px;
    }
 
-   .contact-representative {
+   .check_book {
       background: var(--dark-sky-blue);
       padding: 2rem 2rem 0 0;
    }
 
-   .contact-representative h5 {
+   .check_book h5 {
       font-size: 20px;
    }
 
-   .contact-representative p {
+   .check_book p {
       font-size: 14px;
       padding-left: 2rem;
    }
@@ -1704,13 +1789,13 @@ footer .copyrights img {
 }
 
 @media (max-width:576px) {
-   .contact-representative {
+   .check_book {
       background: var(--dark-sky-blue);
       padding: 2rem 1rem 0 0;
       border-radius: 0;
    }
 
-   .contact-representative p {
+   .check_book p {
       padding-left: 1rem;
    }
-}
+} */
