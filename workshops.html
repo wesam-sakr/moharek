@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moharek</title>
+
+    <link rel="icon" type="image/x-icon" href="images/logo-fav.png" />
+
+    <!-- Bootstrap link  -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+    />
+
+    <!-- font awesom link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- owl-carousel link -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+
+    <!-- WoW link -->
+    <link rel="stylesheet" href="css/animate.css" />
+
+    <!-- animate link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- custom css file link  -->
+    <!-- <link rel="stylesheet" href="css/style-ltr.css"> -->
+  </head>
+  <body>
+    <!-- -------- loading ----------- -->
+
+    <div id="loading">
+      <div class="loader">
+        <img src="images/logo-fav.png" alt="" />
+      </div>
+    </div>
+
+    <!-- -------- loading ends ----------- -->
+
+    <nav class="navbar navbar-expand-lg navbar-light top-0">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand m-0" href="index.html">
+          <img src="images/logo.svg" alt="" />
+        </a>
+        <div
+          class="collapse navbar-collapse justify-content-between align-items-center"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link"> الرئيسية</a>
+            </li>
+            <li class="nav-item">
+              <a href="services.html" class="nav-link"> الخدمات</a>
+            </li>
+            <li class="nav-item">
+              <a href="cars.html" class="nav-link">السيارات</a>
+            </li>
+            <li class="nav-item">
+              <a href="workshops.html" class="nav-link active"> مزودي الخدمات</a>
+            </li>
+            <li class="nav-item">
+              <a href="sell_car.html" class="nav-link">بيع سيارتك</a>
+            </li>
+            <li class="nav-item">
+              <a href="check_car.html" class="nav-link">حجز فحص</a>
+            </li>
+            <li class="nav-item">
+              <a href="blogs.html" class="nav-link">المقالات</a>
+            </li>
+            <li class="nav-item">
+              <a href="contact_us.html" class="nav-link">تواصل معنا</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav m-0">
+            <li class="nav-item lang">
+              <a href="" class="nav-link" id="lang">EN</a>
+            </li>
+            <li class="nav-item auth light">
+              <a href="notifi.html" class="nav-link">
+                <i class="fa-regular fa-bell"></i>
+              </a>
+            </li>
+
+            <li class="nav-item auth">
+              <a href="login.html" class="nav-link">
+                <i class="fa-regular fa-user"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ==== start breadcrumb ==== -->
+    <nav class="breadcrumb-wrapper" aria-label="breadcrumb">
+      <div class="container-fluid">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">الرئيسية</a></li>
+          <li class="breadcrumb-item active" aria-current="page">مزودي الخدمات</li>
+        </ol>
+      </div>
+    </nav>
+    <!-- ==== end breadcrumb ==== -->
+
+    <div class="car_filter mb-5 pb-md-4">
+      <div class="row gy-4">
+        <div class="col-md-4 col-lg-3 filter">
+          <div class="filter-header d-md-none">
+            <h5>التصفية</h5>
+            <button class="btn-close"></button>
+          </div>
+          <div class="selected-filters">
+            <div class="selected-filters-title">
+                <p> فلترة النتائج</p>
+                <button id="clear-all-filters" class="">إعادة تعيين</button>
+            </div>
+            <ul id="selected-filters-list"></ul>
+          </div>
+          <form action="">
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <!-- ترتيب حسب حالة السيارة-->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingOne">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseOne"
+                      aria-expanded="true"
+                      aria-controls="flush-collapseOne"
+                    >
+                    حالة السيارة
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseOne"
+                    class="accordion-collapse collapse show"
+                    aria-labelledby="flush-headingOne"
+                  >
+                    <div class="accordion-body">
+                      <ul>
+                        <li>
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="sort"
+                              id="sort_by1"
+                            />
+                            <label class="form-check-label" for="sort_by1">
+                                جديدة
+                            </label>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="sort"
+                              id="sort_by2"
+                            />
+                            <label class="form-check-label" for="sort_by2">
+                                مستعملة
+                            </label>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="sort"
+                              id="sort_by3"
+                            />
+                            <label class="form-check-label" for="sort_by3">
+                                المعروضة للبيع
+                            </label>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <!--  الماركة   -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingTwo">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseTwo"
+                      aria-expanded="true"
+                      aria-controls="flush-collapseTwo"
+                    >
+                    الماركة
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseTwo"
+                    class="accordion-collapse collapse show"
+                    aria-labelledby="flush-headingTwo"
+                  >
+                    <div class="accordion-body">
+                      <ul>
+                        <li>
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              name="category1"
+                              id="category1"
+                            />
+                            <label class="form-check-label" for="category1">
+                                تويوتا
+                            </label>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              name="category2"
+                              id="category2"
+                            />
+                            <label class="form-check-label" for="category2">
+                                هيونداي
+                            </label>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              name="category3"
+                              id="category3"
+                            />
+                            <label class="form-check-label" for="category3">
+                              شيفورليه
+                            </label>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              name="category4"
+                              id="category4"
+                            />
+                            <label class="form-check-label" for="category4">
+                                كيا
+                            </label>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- البحث حسب السعر -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingThree">
+                      <button
+                        class="accordion-button"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseThree"
+                        aria-expanded="true"
+                        aria-controls="flush-collapseThree"
+                      >
+                      السعر
+                      </button>
+                    </h2>
+                    <div
+                      id="flush-collapseThree"
+                      class="accordion-collapse collapse show"
+                      aria-labelledby="flush-headingThree"
+                    >
+                        <div class="accordion-body">
+                            <div class="middle">
+                            <div class="multi-range-slider">
+                                <input
+                                type="range"
+                                id="input-left"
+                                min="0"
+                                max="100"
+                                value="0"
+                                />
+                                <input
+                                type="range"
+                                id="input-right"
+                                min="0"
+                                max="100"
+                                value="100"
+                                />
+                
+                                <div class="slider">
+                                <div class="track"></div>
+                                <div class="range"></div>
+                                <div class="thumb left">
+                                    <div class="dot"></div>
+                                </div>
+                                <div class="thumb right">
+                                    <div class="dot"></div>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="prices">
+                                <!-- <span>السعر</span> -->
+                                <span class="price-to">400 ج.م</span>
+                                <span> - </span>
+                                <span class="price-from">100 ج.م</span>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- <button type="button" class="main-btn">تصفية</button> -->
+          </form>
+        </div>
+        <div class="col-md-8 col-lg-9">
+          <div class="cars">
+            <div class="row g-3">
+              <div class="col-6 col-md-3 col-lg-4">
+                <div class="workshop">
+                    <a href="workshop_details.html" class="link"></a>
+                    <img src="images/shop1.png" alt="" />
+                    <div class="details">
+                      <div class="M_details">
+                        <h6>ورشة فهد بلال</h6>
+                        <label class="switch">
+                          <input type="checkbox" disabled checked />
+                          <div class="slider round">
+                            <span class="on">متاح</span>
+                            <span class="off">مغلق</span>
+                          </div>
+                        </label>
+                      </div>
+                      <span><i class="bi bi-geo-alt"></i> الرياض</span>
+                    </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-3 col-lg-4">
+                <div class="workshop">
+                    <a href="workshop_details.html" class="link"></a>
+                    <img src="images/shop1.png" alt="" />
+                    <div class="details">
+                      <div class="M_details">
+                        <h6>ورشة فهد بلال</h6>
+                        <label class="switch">
+                          <input type="checkbox" disabled checked />
+                          <div class="slider round">
+                            <span class="on">متاح</span>
+                            <span class="off">مغلق</span>
+                          </div>
+                        </label>
+                      </div>
+                      <span><i class="bi bi-geo-alt"></i> الرياض</span>
+                    </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-3 col-lg-4">
+                <div class="workshop">
+                    <a href="workshop_details.html" class="link"></a>
+                    <img src="images/shop1.png" alt="" />
+                    <div class="details">
+                      <div class="M_details">
+                        <h6>ورشة فهد بلال</h6>
+                        <label class="switch">
+                          <input type="checkbox" disabled checked />
+                          <div class="slider round">
+                            <span class="on">متاح</span>
+                            <span class="off">مغلق</span>
+                          </div>
+                        </label>
+                      </div>
+                      <span><i class="bi bi-geo-alt"></i> الرياض</span>
+                    </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-3 col-lg-4">
+                <div class="workshop">
+                    <a href="workshop_details.html" class="link"></a>
+                    <img src="images/shop1.png" alt="" />
+                    <div class="details">
+                      <div class="M_details">
+                        <h6>ورشة فهد بلال</h6>
+                        <label class="switch">
+                          <input type="checkbox" disabled checked />
+                          <div class="slider round">
+                            <span class="on">متاح</span>
+                            <span class="off">مغلق</span>
+                          </div>
+                        </label>
+                      </div>
+                      <span><i class="bi bi-geo-alt"></i> الرياض</span>
+                    </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-3 col-lg-4">
+                <div class="workshop">
+                    <a href="workshop_details.html" class="link"></a>
+                    <img src="images/shop1.png" alt="" />
+                    <div class="details">
+                      <div class="M_details">
+                        <h6>ورشة فهد بلال</h6>
+                        <label class="switch">
+                          <input type="checkbox" disabled checked />
+                          <div class="slider round">
+                            <span class="on">متاح</span>
+                            <span class="off">مغلق</span>
+                          </div>
+                        </label>
+                      </div>
+                      <span><i class="bi bi-geo-alt"></i> الرياض</span>
+                    </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-3 col-lg-4">
+                <div class="workshop">
+                    <a href="workshop_details.html" class="link"></a>
+                    <img src="images/shop1.png" alt="" />
+                    <div class="details">
+                      <div class="M_details">
+                        <h6>ورشة فهد بلال</h6>
+                        <label class="switch">
+                          <input type="checkbox" disabled checked />
+                          <div class="slider round">
+                            <span class="on">متاح</span>
+                            <span class="off">مغلق</span>
+                          </div>
+                        </label>
+                      </div>
+                      <span><i class="bi bi-geo-alt"></i> الرياض</span>
+                    </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-3 col-lg-4">
+                <div class="workshop">
+                    <a href="workshop_details.html" class="link"></a>
+                    <img src="images/shop1.png" alt="" />
+                    <div class="details">
+                      <div class="M_details">
+                        <h6>ورشة فهد بلال</h6>
+                        <label class="switch">
+                          <input type="checkbox" disabled checked />
+                          <div class="slider round">
+                            <span class="on">متاح</span>
+                            <span class="off">مغلق</span>
+                          </div>
+                        </label>
+                      </div>
+                      <span><i class="bi bi-geo-alt"></i> الرياض</span>
+                    </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-3 col-lg-4">
+                <div class="workshop">
+                    <a href="workshop_details.html" class="link"></a>
+                    <img src="images/shop1.png" alt="" />
+                    <div class="details">
+                      <div class="M_details">
+                        <h6>ورشة فهد بلال</h6>
+                        <label class="switch">
+                          <input type="checkbox" disabled checked />
+                          <div class="slider round">
+                            <span class="on">متاح</span>
+                            <span class="off">مغلق</span>
+                          </div>
+                        </label>
+                      </div>
+                      <span><i class="bi bi-geo-alt"></i> الرياض</span>
+                    </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-3 col-lg-4">
+                <div class="workshop">
+                    <a href="workshop_details.html" class="link"></a>
+                    <img src="images/shop1.png" alt="" />
+                    <div class="details">
+                      <div class="M_details">
+                        <h6>ورشة فهد بلال</h6>
+                        <label class="switch">
+                          <input type="checkbox" disabled checked />
+                          <div class="slider round">
+                            <span class="on">متاح</span>
+                            <span class="off">مغلق</span>
+                          </div>
+                        </label>
+                      </div>
+                      <span><i class="bi bi-geo-alt"></i> الرياض</span>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <!--  all cars link -->
+            <nav aria-label="Page navigation example">
+              <ul class="pagination">
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">
+                      <i class="fa-solid fa-chevron-right"></i>
+                    </span>
+                  </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">
+                      <i class="fa-solid fa-chevron-left"></i>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button id="filter"><i class="bi bi-sliders fs-5"></i></button>
+
+    <footer>
+      <div class="container-fluid">
+        <div class="footer-content">
+          <button id="scroll-top">
+            <i class="bi bi-chevron-double-up"></i>
+          </button>
+          <div class="links row justify-content-between">
+            <div class="col-12 col-md-6 mb-4 mb-md-5">
+              <div class="logo">
+                <img src="images/logo.svg" alt="" />
+              </div>
+              <p>
+                محرك هو تطبيق يوفر لك جميع احتياجاتك في عالم السيارات. حمله الآن
+                لتكتشف المزيد من المميزات
+              </p>
+              <div class="apps-btns">
+                <a href="#" class="main-btn">
+                  <img src="images/apple.svg" alt="" />
+                  <div>
+                    <span>حمل الان</span>
+                    <h5>Apple store</h5>
+                  </div>
+                </a>
+                <a href="#">
+                  <img src="images/GooglePlay.png" alt="" />
+                  <div>
+                    <span>حمل الان</span>
+                    <h5>Google play</h5>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <h5 class="links_title">روابط الموقع</h5>
+              <ul>
+                <li>
+                  <a href="index.html">الرئيسية</a>
+                </li>
+                <li>
+                  <a href="about_us.html">من نحن</a>
+                </li>
+                <li>
+                  <a href="cars.html">السيارات </a>
+                </li>
+                <li>
+                  <a href="workshops.html">الورش</a>
+                </li>
+                <li>
+                  <a href="check_car.html">حجز فحص</a>
+                </li>
+                <li>
+                  <a href="cars.html">الإعلانات</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-6 col-md-3">
+              <h5 class="links_title">روابط هامة</h5>
+              <ul>
+                <li>
+                  <a href="services.html"> الخدمات</a>
+                </li>
+                <li>
+                  <a href="contact_us.html"> تواصل معنا</a>
+                </li>
+                <li>
+                  <a href="jobs.html"> الوظائف </a>
+                </li>
+                <li>
+                  <a href="policy.html"> سياسة الخصوصية </a>
+                </li>
+                <li>
+                  <a href="terms.html"> الشروط والأحكام </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="send-email">
+            <div class="row align-items-center">
+              <div class="col-12 col-lg-5 mb-4 mb-lg-0">
+                <p class="justify-content-center justify-content-lg-start">
+                  <i class="bi bi-envelope-open-fill"></i> اكتب بريدك الإلكترونى
+                  وتابع كل جديد
+                </p>
+              </div>
+              <div class="col-12 col-lg-7">
+                <div class="send-email-box">
+                  <input type="text" placeholder="اكتب بريدك الالكترونى" />
+                  <button>متابعة</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyrights">
+        <div class="container-fluid">
+          <a href="https://smartvision4p.com" class="link" target="_blank"> </a>
+          <span>جميع الحقوق حفوظة لموقع سمارت فيجن</span>
+          <img src="images/smart-logo.svg" alt="" />
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery script -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+    <!-- bootstrap script -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- owl-carousel script -->
+    <script src="js/owl.carousel.min.js"></script>
+
+    <!-- font awesom script -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"
+      integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- wow script -->
+    <script src="js/wow.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

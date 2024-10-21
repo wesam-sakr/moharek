@@ -81,13 +81,13 @@
         >
           <ul class="navbar-nav mb-2 mb-lg-0">
             <li class="nav-item">
-              <a href="index.html" class="nav-link active"> الرئيسية</a>
+              <a href="index.html" class="nav-link"> الرئيسية</a>
             </li>
             <li class="nav-item">
               <a href="services.html" class="nav-link"> الخدمات</a>
             </li>
             <li class="nav-item">
-              <a href="cars.html" class="nav-link">السيارات</a>
+              <a href="cars.html" class="nav-link active">السيارات</a>
             </li>
             <li class="nav-item">
               <a href="workshops.html" class="nav-link"> مزودي الخدمات</a>
@@ -136,7 +136,7 @@
     </nav>
     <!-- ==== end breadcrumb ==== -->
 
-    <div class="car_filter">
+    <div class="car_filter mb-5 pb-md-4">
       <div class="row gy-4">
         <div class="col-md-4 col-lg-3 filter">
           <div class="filter-header d-md-none">
@@ -145,9 +145,7 @@
           </div>
           <div class="selected-filters">
             <div class="selected-filters-title">
-                <span style="min-width: max-content; line-height: 2.1"
-                  > فلترة النتائج</span
-                >
+                <p> فلترة النتائج</p>
                 <button id="clear-all-filters" class="">إعادة تعيين</button>
             </div>
             <ul id="selected-filters-list"></ul>
@@ -275,7 +273,7 @@
                               id="category3"
                             />
                             <label class="form-check-label" for="category3">
-                              ألعاب تنمیة المهارات
+                              شيفورليه
                             </label>
                           </div>
                         </li>
@@ -304,15 +302,15 @@
                         class="accordion-button"
                         type="button"
                         data-bs-toggle="collapse"
-                        data-bs-target="#flush-headingThree"
+                        data-bs-target="#flush-collapseThree"
                         aria-expanded="true"
-                        aria-controls="flush-headingThree"
+                        aria-controls="flush-collapseThree"
                       >
                       السعر
                       </button>
                     </h2>
                     <div
-                      id="flush-headingThree"
+                      id="flush-collapseThree"
                       class="accordion-collapse collapse show"
                       aria-labelledby="flush-headingThree"
                     >
@@ -357,7 +355,6 @@
                 </div>
 
             </div>
-           
             <!-- <button type="button" class="main-btn">تصفية</button> -->
           </form>
         </div>
@@ -486,10 +483,34 @@
               </div>
             </div>
             <!--  all cars link -->
+            <nav aria-label="Page navigation example">
+              <ul class="pagination">
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">
+                      <i class="fa-solid fa-chevron-right"></i>
+                    </span>
+                  </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">
+                      <i class="fa-solid fa-chevron-left"></i>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
       </div>
     </div>
+
+    <button id="filter"><i class="bi bi-sliders fs-5"></i></button>
+
 
     <footer>
       <div class="container-fluid">
@@ -508,7 +529,7 @@
               </p>
               <div class="apps-btns">
                 <a href="#" class="main-btn">
-                  <img src="images/apple.png" alt="" />
+                  <img src="images/apple.svg" alt="" />
                   <div>
                     <span>حمل الان</span>
                     <h5>Apple store</h5>
