@@ -10,6 +10,51 @@ $(document).ready(function () {
     $(this).toggleClass("fav");
   })
 
+  function stickySidebar(mainBlk, sidebarWrapper, sidebarBlk) {
+
+    var main = $(mainBlk); //Our sticky block will scroll next to this one
+    
+    var stickyWrapper = $(sidebarWrapper); // General position relative wrapper for main and sticky block
+    var stickyWrapperWidth = $(sidebarWrapper).width(); 
+
+    var stickyBlk = $(sidebarBlk); // Our sticky block
+    stickyBlk.width(stickyWrapperWidth)
+
+    var startPos = stickyBlk.offset().top; // Starting position where the block should stick
+
+    var finishPos = main.height() - stickyBlk.innerHeight(); // Starting position where the block should stick
+    stickyWrapper.height(main.height()); 
+    // Set height of sticky wrapper equal to the height of main block that we are scrolling next to
+
+    $(window).scroll(function(){ 
+      var currentScrollPos = $(document).scrollTop();  // Get current position of scroll
+      console.log(currentScrollPos)
+      if ((currentScrollPos > startPos) && (currentScrollPos <= finishPos)) { // Check if current scroll position is in range of main block height, add class stuck
+        stickyBlk.removeClass('bottom');
+        stickyBlk.addClass('stuck');
+        console.log('if');
+      }
+      else if (currentScrollPos > finishPos) {
+        stickyBlk.removeClass('stuck');
+        stickyBlk.addClass('bottom');
+        console.log('else if');
+      }  
+      // if block current scroll is further, add class bottom
+      else {
+        stickyBlk.removeClass('stuck');
+        stickyBlk.removeClass('bottom');
+        console.log('else');
+      } // in other cases do nothing
+    });
+
+  };
+  $(window).on('load', function() {
+    stickySidebar ('.stick-next-to', '.sticky-wrapper', '.sticky');
+  })
+
+
+
+
   // make nav bar static on scroll 
   var navbar = document.querySelector("nav.navbar");
   var sticky = navbar.offsetHeight;
@@ -99,6 +144,7 @@ $(document).ready(function () {
   }
   $('.one').owlCarousel({
     nav: true,
+    navText: [`<i class="fa-solid fa-chevron-right"></i>`, `<i class="fa-solid fa-chevron-left"></i>`],
     items: 1,
     margin: 3,
     autoplay: 5000,
@@ -147,8 +193,8 @@ $(document).ready(function () {
   //   $(".slider .owl-prev").trigger('click');
   // });
   $('.slider-two .item').click(function () {
-    var b = $(".item").index(this);
-    $(".slider .owl-dots .owl-dot").eq(b).trigger('click');
+    var stickyOffset = $(".item").index(this);
+    $(".slider .owl-dots .owl-dot").eq(stickyOffset).trigger('click');
     $(".slider-two .item").removeClass("active");
     $(this).addClass("active");
   });
@@ -332,6 +378,12 @@ $(document).ready(function () {
     });
   }
   // === end filter page === //
+
+
+
+
+
+
 
 });
 
