@@ -907,6 +907,12 @@ header .content a {
 body, html {
    overflow-x: hidden;
 }
+
+.workshop-single .workshop-wrapper{
+   display: flex;
+   align-items: flex-start;
+   gap: 20px;
+}
 .workshop-details {
    background-color: #fcfcfc;
    border-radius: 5px;
