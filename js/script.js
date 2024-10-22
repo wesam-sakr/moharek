@@ -85,6 +85,94 @@ $(document).ready(function () {
     }
   });
 
+  var changeSlide = 4; // mobile -1, desktop + 1
+  // Resize and refresh page. slider-two slideBy bug remove
+  var slide = changeSlide;
+  if ($(window).width() < 600) {
+    var slide = changeSlide;
+    slide--;
+  } else if ($(window).width() > 999) {
+    var slide = changeSlide;
+    slide++;
+  } else {
+    var slide = changeSlide;
+  }
+  $('.one').owlCarousel({
+    nav: true,
+    items: 1,
+    margin: 3,
+    autoplay: 5000,
+    rtl: true
+  })
+  $('.two').owlCarousel({
+    nav: false,
+    margin: 4,
+    rtl: true,
+    responsive: {
+      0: {
+        items: changeSlide - 1,
+        slideBy: changeSlide - 1
+      },
+      600: {
+        items: changeSlide,
+        slideBy: changeSlide
+      },
+      1000: {
+        items: changeSlide + 1,
+        slideBy: changeSlide + 1
+      }
+    }
+  })
+  var owl = $('.one');
+  owl.owlCarousel();
+  owl.on('translated.owl.carousel', function (event) {
+    // $(".right").removeClass("nonr");
+    // $(".left").removeClass("nonl");
+    // if ($('.one .owl-next').is(".disabled")) {
+    //   $(".slider .right").addClass("nonr");
+    // }
+    // if ($('.one .owl-prev').is(".disabled")) {
+    //   $(".slider .left").addClass("nonl");
+    // }
+    $('.slider-two .item').removeClass("active");
+    var c = $(".slider .owl-item.active").index();
+    $('.slider-two .item').eq(c).addClass("active");
+    var d = Math.ceil((c + 1) / (slide)) - 1;
+    $(".slider-two .owl-dots .owl-dot").eq(d).trigger('click');
+  })
+  // $('.right').click(function () {
+  //   $(".slider .owl-next").trigger('click');
+  // });
+  // $('.left').click(function () {
+  //   $(".slider .owl-prev").trigger('click');
+  // });
+  $('.slider-two .item').click(function () {
+    var b = $(".item").index(this);
+    $(".slider .owl-dots .owl-dot").eq(b).trigger('click');
+    $(".slider-two .item").removeClass("active");
+    $(this).addClass("active");
+  });
+  var owl2 = $('.two');
+  owl2.owlCarousel();
+  owl2.on('translated.owl.carousel', function (event) {
+    $(".right-t").removeClass("nonr-t");
+    $(".left-t").removeClass("nonl-t");
+    if ($('.two .owl-next').is(".disabled")) {
+      $(".slider-two .right-t").addClass("nonr-t");
+    }
+    if ($('.two .owl-prev').is(".disabled")) {
+      $(".slider-two .left-t").addClass("nonl-t");
+    }
+  })
+  $('.right-t').click(function () {
+    $(".slider-two .owl-prev").trigger('click');
+  });
+  $('.left-t').click(function () {
+    $(".slider-two .owl-next").trigger('click');
+  });
+
+
+
   // === start filter page === //
   $("#filter").click(function () {
     console.log('filteeeeer')
@@ -108,7 +196,7 @@ $(document).ready(function () {
             const li = document.createElement('li');
             li.textContent = label;
             li.setAttribute('data-filter', this.id);
-  
+
             // For radio buttons, associate the filter with the radio group
             if (this.type === 'radio') {
               const groupName = this.name;
@@ -118,7 +206,7 @@ $(document).ready(function () {
               }
               li.setAttribute('data-group', this.name);
             }
-  
+
             const removeBtn = document.createElement('button');
             removeBtn.className = 'remove-filter-btn';
             removeBtn.innerHTML = '<i class="fas fa-times"></i>'; // Using Font Awesome icon
@@ -126,7 +214,7 @@ $(document).ready(function () {
               document.getElementById(li.getAttribute('data-filter')).checked = false;
               selectedFiltersList.removeChild(li);
             };
-  
+
             li.appendChild(removeBtn);
             selectedFiltersList.appendChild(li);
           }
@@ -137,23 +225,23 @@ $(document).ready(function () {
             selectedFiltersList.removeChild(itemToRemove);
           }
         }
-  
+
         if (selectedFiltersList.children.length > 0) {
           selectedFiltersList.style.display = 'flex'
         }
-        else{
+        else {
           console.log('empty')
           selectedFiltersList.style.display = 'none'
         }
       });
     });
-  
+
     // Function to clear all filters
     clearAllBtn.addEventListener('click', function () {
       selectedFiltersList.style.display = 'none'
       // Uncheck all inputs
       filterInputs.forEach(input => input.checked = false);
-  
+
       // Remove all selected filters from the list
       while (selectedFiltersList.firstChild) {
         selectedFiltersList.removeChild(selectedFiltersList.firstChild);
@@ -163,7 +251,7 @@ $(document).ready(function () {
   if (selectedFiltersList.children.length > 0) {
     selectedFiltersList.style.display = 'flex'
   }
-  else{
+  else {
     console.log('empty')
     selectedFiltersList.style.display = 'none'
   }
@@ -176,72 +264,72 @@ $(document).ready(function () {
   var priceFrom = document.querySelector(".price-from");
   var priceTo = document.querySelector(".price-to");
   if (inputLeft !== null) {
-      function setLeftValue() {
-          var _this = inputLeft,
-              min = parseInt(_this.min),
-              max = parseInt(_this.max);
-  
-          _this.value = Math.min(parseInt(_this.value), parseInt(inputRight.value) - 1);
-  
-          var percent = ((_this.value - min) / (max - min)) * 100;
-  
-          thumbLeft.style.left = percent + "%";
-          range.style.left = percent + "%";
-  
-          // Calculate price based on range value
-          var price = parseInt(inputLeft.value) * 3; // Adjust this formula based on your requirements
-          priceFrom.textContent = price + " ج.م";
-      }
-      setLeftValue();
-  
-      function setRightValue() {
-          var _this = inputRight,
-              min = parseInt(_this.min),
-              max = parseInt(_this.max);
-  
-          _this.value = Math.max(parseInt(_this.value), parseInt(inputLeft.value) + 1);
-  
-          var percent = ((_this.value - min) / (max - min)) * 100;
-  
-          thumbRight.style.right = (100 - percent) + "%";
-          range.style.right = (100 - percent) + "%";
-  
-          // Calculate price based on range value
-          var price = parseInt(inputRight.value) * 3; // Adjust this formula based on your requirements
-          priceTo.textContent = price + "  ج.م";
-      }
-      setRightValue();
-  
-      inputLeft.addEventListener("input", setLeftValue);
-      inputRight.addEventListener("input", setRightValue);
-  
-      // Add event listeners for thumb hover and active states
-      // These listeners are not directly related to updating the price
-      inputLeft.addEventListener("mouseover", function() {
-          thumbLeft.classList.add("hover");
-      });
-      inputLeft.addEventListener("mouseout", function() {
-          thumbLeft.classList.remove("hover");
-      });
-      inputLeft.addEventListener("mousedown", function() {
-          thumbLeft.classList.add("active");
-      });
-      inputLeft.addEventListener("mouseup", function() {
-          thumbLeft.classList.remove("active");
-      });
-  
-      inputRight.addEventListener("mouseover", function() {
-          thumbRight.classList.add("hover");
-      });
-      inputRight.addEventListener("mouseout", function() {
-          thumbRight.classList.remove("hover");
-      });
-      inputRight.addEventListener("mousedown", function() {
-          thumbRight.classList.add("active");
-      });
-      inputRight.addEventListener("mouseup", function() {
-          thumbRight.classList.remove("active");
-      });
+    function setLeftValue() {
+      var _this = inputLeft,
+        min = parseInt(_this.min),
+        max = parseInt(_this.max);
+
+      _this.value = Math.min(parseInt(_this.value), parseInt(inputRight.value) - 1);
+
+      var percent = ((_this.value - min) / (max - min)) * 100;
+
+      thumbLeft.style.left = percent + "%";
+      range.style.left = percent + "%";
+
+      // Calculate price based on range value
+      var price = parseInt(inputLeft.value) * 3; // Adjust this formula based on your requirements
+      priceFrom.textContent = price + " ج.م";
+    }
+    setLeftValue();
+
+    function setRightValue() {
+      var _this = inputRight,
+        min = parseInt(_this.min),
+        max = parseInt(_this.max);
+
+      _this.value = Math.max(parseInt(_this.value), parseInt(inputLeft.value) + 1);
+
+      var percent = ((_this.value - min) / (max - min)) * 100;
+
+      thumbRight.style.right = (100 - percent) + "%";
+      range.style.right = (100 - percent) + "%";
+
+      // Calculate price based on range value
+      var price = parseInt(inputRight.value) * 3; // Adjust this formula based on your requirements
+      priceTo.textContent = price + "  ج.م";
+    }
+    setRightValue();
+
+    inputLeft.addEventListener("input", setLeftValue);
+    inputRight.addEventListener("input", setRightValue);
+
+    // Add event listeners for thumb hover and active states
+    // These listeners are not directly related to updating the price
+    inputLeft.addEventListener("mouseover", function () {
+      thumbLeft.classList.add("hover");
+    });
+    inputLeft.addEventListener("mouseout", function () {
+      thumbLeft.classList.remove("hover");
+    });
+    inputLeft.addEventListener("mousedown", function () {
+      thumbLeft.classList.add("active");
+    });
+    inputLeft.addEventListener("mouseup", function () {
+      thumbLeft.classList.remove("active");
+    });
+
+    inputRight.addEventListener("mouseover", function () {
+      thumbRight.classList.add("hover");
+    });
+    inputRight.addEventListener("mouseout", function () {
+      thumbRight.classList.remove("hover");
+    });
+    inputRight.addEventListener("mousedown", function () {
+      thumbRight.classList.add("active");
+    });
+    inputRight.addEventListener("mouseup", function () {
+      thumbRight.classList.remove("active");
+    });
   }
   // === end filter page === //
 
