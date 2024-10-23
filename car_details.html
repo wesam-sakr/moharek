@@ -42,6 +42,11 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
 
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
+    />
+
     <!-- custom css file link  -->
     <link rel="stylesheet" href="css/style.css" />
 
@@ -133,7 +138,7 @@
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">الرئيسية</a></li>
           <li class="breadcrumb-item active" aria-current="page">
-            مزودي الخدمات
+            السيارات
           </li>
         </ol>
       </div>
@@ -141,83 +146,500 @@
     <!-- ==== end breadcrumb ==== -->
 
     <!-- ورش الصيانة -->
-    <div class="container  car-single mb-5 pb-md-4">
-      <div class="car-wrapper">
-        <main class="stick-next-to col-12 col-md-7">
-          <div class="single-img">
-            <div class="owl-carousel owl-theme one">
-            <a
-                data-fancybox="gallary"
-                href="images/01.jpg"
-                class="item-box"
-            >
-                <img src="images/01.jpg" alt="" />
-            </a>
-            <a
-                data-fancybox="gallery"
-                href="images/02.jpg"
-                class="item-box"
-            >
-                <img src="images/02.jpg" alt="" />
-            </a>
-            <a
-                data-fancybox="gallery"
-                href="images/03.jpg"
-                class="item-box"
-            >
-                <img src="images/03.jpg" alt="" />
-            </a>
-            <a
-                data-fancybox="gallery"
-                href="images/06.jpg"
-                class="item-box"
-            >
-                <img src="images/06.jpg" alt="" />
-            </a>
-            <a
-                data-fancybox="gallery"
-                href="images/Rectangle 8.png"
-                class="item-box"
-            >
-                <img src="images/Rectangle 8.png" alt="" />
-            </a>
-            <a
-                data-fancybox="gallery"
-                href="images/head_car.png"
-                class="item-box"
-            >
-                <img src="images/head_car.png" alt="" />
-            </a>
-            </div>
-          </div>
-        </main>
-        <aside class="sticky-wrapper col-12 col-md-5">
-          <div class="car-details sticky">
-            <div class="row align-items-center justify-content-between">
-              <div class="col-auto d-flex align-items-center">
-                <img src="images/Group 115.png" alt="" />
-                <h5>ورشة فهد بلال</h5>
+    <section class="container-fluid mb-5 pb-md-4">
+      <div class="car-single">
+        <div class="car-wrapper">
+          <main class="stick-next-to col-12 col-md-8">
+            <!-- slider images -->
+            <div class="single-img position-relative">
+              <div class="owl-carousel owl-theme one">
+              <a
+                  data-fancybox="gallary"
+                  href="images/01.jpg"
+                  class="item-box"
+              >
+                  <img src="images/01.jpg" alt="" />
+              </a>
+              <a
+                  data-fancybox="gallery"
+                  href="images/02.jpg"
+                  class="item-box"
+              >
+                  <img src="images/02.jpg" alt="" />
+              </a>
+              <a
+                  data-fancybox="gallery"
+                  href="images/03.jpg"
+                  class="item-box"
+              >
+                  <img src="images/03.jpg" alt="" />
+              </a>
+              <a
+                  data-fancybox="gallery"
+                  href="images/06.jpg"
+                  class="item-box"
+              >
+                  <img src="images/06.jpg" alt="" />
+              </a>
+              <a
+                  data-fancybox="gallery"
+                  href="images/Rectangle 8.png"
+                  class="item-box"
+              >
+                  <img src="images/Rectangle 8.png" alt="" />
+              </a>
+              <a
+                  data-fancybox="gallery"
+                  href="images/04.webp"
+                  class="item-box"
+              >
+                  <img src="images/04.webp" alt="" />
+              </a>
               </div>
-              <div class="col-auto">
-                <div class="Stars" style="--rating: 3.5"></div>
+              <div class="slider-counter">
+                <span class="current">01</span>
+                <span class="mx-1">من</span>
+                <span class="len"> 04 </span>
               </div>
             </div>
-            <div class="row align-items-center justify-content-between">
-              <div class="col-auto d-flex align-items-center">
-                <img src="images/HOME/Group 115.png" alt="" />
-                <h5>الرياض</h5>
-              </div>
-              <div class="col-auto">
-                <a href="">
-                  <i class="bi bi-chat px-2"></i>
-                  <span>محادثة</span>
-                </a>
+            <!-- car information -->
+            <div class="car-info mt-4">
+              <nav id="navbar-example2" class="bg-body-tertiary px-3 mb-3">
+                <ul class="nav nav-pills">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#scrollspyHeading1">معلومات السيارة</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#scrollspyHeading2">تقرير الفحص</a>
+                  </li>
+                </ul>
+              </nav>
+              <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+                <div id="scrollspyHeading1">
+                  <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          معلومات السيارة
+                        </button>
+                      </h2>
+                      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          <ul>
+                            <li>
+                              الماركة : هيونداي
+                            </li>
+                            <li>
+                              النوع : اكسنت
+                            </li>
+                            <li>
+                              الموديل : 2023
+                            </li>
+                            <li>
+                              الفئة : سمارت
+                            </li>
+                            <li>
+                              اللون الخارجي : رمادي
+                            </li>
+                            <li>
+                              اللون الداخلي: بيج
+                            </li>
+                            <li>
+                              الوارد : سعودي
+                            </li>
+                            <li>
+                              نوع الوقود : بنزين
+                            </li>
+                            <li>
+                              نوع القير: اوتوماتيك
+                            </li>
+                            <li>
+                              سرعات القير: 6
+                            </li>
+                            <li>
+                              عدد السلندرات : 4 سيليندر
+                            </li>
+                            <li>
+                              الحالة: جديدة
+                            </li>
+                            <li>
+                              حجم المحرك : 1.4
+                            </li>
+                            <li>
+                              نوع الدفع: FWD دفع امامي
+                            </li>
+                            <li>
+                              عدد مفاتيح السيارة : 1
+                            </li>
+                            <li>
+                              عدد المقاعد : 5
+                            </li>
+                            <li>
+                              نوع المحرك : تنفس طبيعي
+                            </li>
+                            <li>
+                              سعة خزان الوقود : 45 لتر
+                            </li>
+                            <li>
+                              القدرة بالحصان : 100 حصان
+                            </li>
+                            <li>
+                              عدد الابواب : 4
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          الأمان
+                        </button>
+                      </h2>
+                      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          <ul>
+                            <li>
+                              وسائد هوائية امامية
+                            </li>
+                            <li>
+                              فرامل ABS
+                            </li>
+                            <li>
+                              الثبات الإلكتروني ESP
+                            </li>
+                            <li>
+                              مساعد الفرامل BA
+                            </li>
+                            <li>
+                              أحزمة أمان
+                            </li>
+                            <li>
+                              EBD توزيع قوة الفرامل الكترونيا
+                            </li>
+                            <li>
+                              نظام التحكم بالإنزلاق (TRC)
+                            </li>
+                            <li>
+                              سنتر لوك
+                            </li>
+                            <li>
+                              تحكم فى الحساسات
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                          الراحة
+                        </button>
+                      </h2>
+                      <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          <ul>
+                            <li>
+                              تحكم دريكسون
+                            </li>
+                            <li>
+                              مقاعد قماش
+                            </li>
+                            <li>
+                              تشغيل مفتاح
+                            </li>
+                            <li>
+                              مكيف يدوي
+                            </li>
+                            <li>
+                              فتح الابواب بالريموت
+                            </li>
+                            <li>
+                              تحكم مقاعد يدوى
+                            </li>
+                            <li>
+                              فتحات تكييف خلفية
+                            </li>
+                            <li>
+                              وضعيات للقيادة
+                            </li>
+                            <li>
+                              أوامر صوتية
+                            </li>
+                            <li>
+                              Echo توفير الوقود ايكو
+                            </li>
+                            <li>
+                              ISOFIX لتثبيت مقاعد الاطفال     
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+                <div id="scrollspyHeading2">
+                  <!-- <h5>
+                    فحص السيارة الشامل
+                  </h5>
+                  <p>
+                    نختار سياراتنا المستعملة وفق معايير دقيقة ونعرض فقط الأفضل
+                  </p> -->
+
+                </div>
               </div>
             </div>
-          </div>
-        </aside>
+          </main>
+          <aside class="sticky-wrapper col-12 col-md-4">
+            <div class="car-details sticky">
+              <div class="car_feature">
+                <h5>هيونداي اكسنت سمارت 2023</h5>
+                <div class="c_badge">مستعملة</div>
+              </div>
+              <div class="car_feature">
+                <div class="w-100">
+                  <h5 class="price">
+                    <span>السعر </span>
+                    <span> 51,000 </span>
+                    <span>ريال </span>
+                  </h5>
+                  <span class="hint">السعر يشمل الضريبة المضافة</span>
+                  <div class="car_actions">
+                    <!-- action : open confirm book modal -->
+                    <button class="main-btn w-100 my-md-3" data-bs-toggle="modal" data-bs-target="#book_modal">
+                      احجزها الآن
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="book_modal" tabindex="-1" aria-labelledby="book_modalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="book_modalLabel">تأكيد الحجز </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <h4 class="fs-5 mb-3">
+                              حجز اسم السيارة | رقم الاعلان
+                            </h4>
+                            <img src="images/04.webp" alt="">
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="main-btn">تأكيد</button>
+                            <button type="button" class="main-outline-btn px-4" data-bs-dismiss="modal">اغلاق</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- action : show div.car-contact -->
+                    <button class="toggle_contact btn_show_contact main-outline-btn w-100" id="btn_show_contact" data-target="car_contact">
+                      تواصل معنا للحجز
+                    </button>
+                    <div class="car_contact d-none">
+                      <div class="bg-white">
+                        <div class="d-flex align-items-center gap-2">
+                          <button class="toggle_contact bg-transparent" data-target="btn_show_contact">
+                            <i class="fa-solid fa-close fs-5"></i>
+                          </button>
+                          <h5 class="text-center">تواصل معنا عن طريق : </h5>
+                        </div>
+                        <a href="tel:956920005379" class="main-outline-btn w-100 my-3 px-4">
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                              <i class="fa-solid fa-phone-flip fs-5"></i>
+                              <span>اتصال</span>
+                            </div>
+                            <span>956920005379</span>
+                          </div>
+                        </a>
+                        <a href="https://api.whatsapp.com/send?
+                        phone=956920005379&
+                        text=
+                        ابي استفسر عن شراء
+                        'اسم السيارة هنا'
+                        'مستعملة'
+                        لون
+                        'اللون هنا' 
+                        للبيع
+                        -
+                        'رقم الاعلان هنا '
+                        |  
+                        'لينك الاعلان هنا'
+                        " 
+                        target="_blank" 
+                        class="main-btn w-100 px-4">
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                              <i class="fa-brands fa-whatsapp fs-5"></i>
+                              <span>واتساب</span>
+                            </div>
+                            <span>956920005379</span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="car_feature">
+                <button class="heart">
+                  <i class="fa-regular fa-heart"></i>
+                  <span>إضافة إلى المفضلة</span>
+                </button>
+                <!-- action : open share ad modal -->
+                <button class="share" data-bs-toggle="modal" data-bs-target="#shareAd_modal">
+                  <i class="fa-solid fa-share"></i>
+                  <span>شارك الإعلان</span>
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" id="shareAd_modal" tabindex="-1" aria-labelledby="shareAd_modalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="shareAd_modalLabel">شارك هذا الإعلان</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <h4>
+                          هيونداي ستاريا واجن 2022 مستعملة لون أسود للبيع - 208452
+                        </h4>
+                        <div class="social-share">
+                          <a href="#" class="btn btn-primary me-2" target="_blank"></a>
+                        </div>
+                        <div class="copy_link">
+  
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="car_feature border-0">
+                <div class="">
+                  <h5 class="fs-6 mb-2">
+                    <span>رقم الاعلان :</span>
+                    <b>12569</b>
+                  </h5>
+                  <p>اذكر رقم الإعلان عند الاتصال مع خدمة العملاء</p>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
       </div>
-    </div>
+    </section>
+
+    <!-- سيارات مشابهة -->
+    <section class="cars car_offers py-5 my-5 bg-transparent">
+      <div class="container-fluid" style="padding-inline-end: 0 !important">
+        <h2 class="title text-end mb-4">سيارات مشابهة</h2>
+        <div class="owl-carousel">
+          <div class="card">
+            <a href="car_details.html" class="link"></a>
+            <div class="card-img-top">
+              <img src="images/06.jpg" alt="" />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">جيتور 2023 Luxury X70</h5>
+              <p class="price">
+                <span>51,000</span>
+                <span>ريال</span>
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <a href="car_details.html" class="link"></a>
+            <div class="card-img-top">
+              <img src="images/01.jpg" alt="" />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">جيتور 2023 Luxury X70</h5>
+              <p class="price">
+                <span>51,000</span>
+                <span>ريال</span>
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <a href="car_details.html" class="link"></a>
+            <div class="card-img-top">
+              <img src="images/03.jpg" alt="" />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">جيتور 2023 Luxury X70</h5>
+              <p class="price">
+                <span>51,000</span>
+                <span>ريال</span>
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <a href="car_details.html" class="link"></a>
+            <div class="card-img-top">
+              <img src="images/01.jpg" alt="" />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">جيتور 2023 Luxury X70</h5>
+              <p class="price">
+                <span>51,000</span>
+                <span>ريال</span>
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <a href="car_details.html" class="link"></a>
+            <div class="card-img-top">
+              <img src="images/06.jpg" alt="" />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">جيتور 2023 Luxury X70</h5>
+              <p class="price">
+                <span>51,000</span>
+                <span>ريال</span>
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <a href="car_details.html" class="link"></a>
+            <div class="card-img-top">
+              <img src="images/01.jpg" alt="" />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">جيتور 2023 Luxury X70</h5>
+              <p class="price">
+                <span>51,000</span>
+                <span>ريال</span>
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <a href="car_details.html" class="link"></a>
+            <div class="card-img-top">
+              <img src="images/03.jpg" alt="" />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">جيتور 2023 Luxury X70</h5>
+              <p class="price">
+                <span>51,000</span>
+                <span>ريال</span>
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <a href="car_details.html" class="link"></a>
+            <div class="card-img-top">
+              <img src="images/01.jpg" alt="" />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">جيتور 2023 Luxury X70</h5>
+              <p class="price">
+                <span>51,000</span>
+                <span>ريال</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <footer>
       <div class="container-fluid">
@@ -332,12 +754,7 @@
     <script src="js/owl.carousel.min.js"></script>
 
     <!-- font awesom script -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"
-      integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
     <!-- wow script -->
     <script src="js/wow.min.js"></script>
