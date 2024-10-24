@@ -5,85 +5,82 @@ $(document).ready(function () {
   $("body").css('overflow-y', 'auto');
   $('#loading').fadeOut(500);
 
+  // fixed nav while scrolling
+  var navbar = document.querySelector("nav.navbar");
+  var sticky = navbar.offsetHeight;
+  $('body').css('marginTop', sticky);
+
   // add fav
   $(".heart").click(function () {
     $(this).toggleClass("fav");
     $(this).find('i').toggleClass('fa-regular fa-solid')
   })
 
+  // side sticky
   function stickySidebar(mainBlk, sidebarWrapper, sidebarBlk) {
-
     var main = $(mainBlk); //Our sticky block will scroll next to this one
-    
     var stickyWrapper = $(sidebarWrapper); // General position relative wrapper for main and sticky block
-    var stickyWrapperWidth = $(sidebarWrapper).innerWidth(); 
-
     var stickyBlk = $(sidebarBlk); // Our sticky block
-    stickyBlk.width(stickyWrapperWidth)
-
     var startPos = stickyBlk.offset().top; // Starting position where the block should stick
+    var finishPos = main.offset().top + main.outerHeight() - stickyBlk.outerHeight();
+    // Finishing position where the block should stick
 
-    var finishPos = main.height() - stickyBlk.innerHeight(); // Starting position where the block should stick
-    stickyWrapper.height(main.height()); 
-    // Set height of sticky wrapper equal to the height of main block that we are scrolling next to
+    stickyWrapper.height(main.height()); // Make our sticky block have the same height of main
 
-    $(window).scroll(function(){ 
-      var currentScrollPos = $(document).scrollTop();  // Get current position of scroll
-      console.log(currentScrollPos)
-      if ((currentScrollPos > startPos) && (currentScrollPos <= finishPos)) { // Check if current scroll position is in range of main block height, add class stuck
-        stickyBlk.removeClass('bottom');
-        stickyBlk.addClass('stuck');
-        console.log('if');
-      }
-      else if (currentScrollPos > finishPos) {
-        stickyBlk.removeClass('stuck');
+    $(window).scroll(function () {
+      var currentScrollPos = $(document).scrollTop();
+
+      var test;
+
+      if ((currentScrollPos > startPos) && (currentScrollPos <= finishPos)) {
+        test = currentScrollPos + startPos;
         stickyBlk.addClass('bottom');
-        console.log('else if');
-      }  
-      // if block current scroll is further, add class bottom
-      else {
-        stickyBlk.removeClass('stuck');
+        stickyBlk.css('top', test);
+      } else if (currentScrollPos <= startPos) {
         stickyBlk.removeClass('bottom');
-        console.log('else');
-      } // in other cases do nothing
+        stickyBlk.css('top', 0);
+      } else if (currentScrollPos > finishPos) {
+        stickyBlk.addClass('bottom');
+        stickyBlk.css('top', '100%');
+      } else {
+        stickyBlk.css('top', 100);
+      }
     });
-
-  };
-  if( $(window).width() >= 992){
-    console.log('size');
-    $(window).on('load', function() {
-      stickySidebar ('.stick-next-to', '.sticky-wrapper', '.sticky');
-    })
+  }
+  if ($(window).width() >= 992 && $('.car-single').length > 0) {
+    $(window).on('load', function () {
+      stickySidebar('.stick-next-to', '.sticky-wrapper', '.sticky');
+    });
   }
 
-  $(".toggle_contact").click(function() {
+  let copyText = document.querySelector(".copy-text");
+  copyText.querySelector("button").addEventListener("click", function () {
+    let input = copyText.querySelector("input.text");
+    input.select();
+    document.execCommand("copy");
+    copyText.classList.add("active");
+    window.getSelection().removeAllRanges();
+    setTimeout(function () {
+      copyText.classList.remove("active");
+    }, 2500);
+  });
+
+  // toggle car contact data
+  $(".toggle_contact").click(function () {
     var target = $(this).data("target");
 
-    $("." + target).toggleClass('d-none'); 
+    $("." + target).toggleClass('d-none');
     console.log(target);
     if (target === "car_contact") {
-      $("#btn_show_contact").toggleClass('d-none');  
+      $("#btn_show_contact").toggleClass('d-none');
     } else {
       console.log('else');
-      $(".car_contact").toggleClass('d-none');  
-      $("#btn_show_contact").show();  
+      $(".car_contact").toggleClass('d-none');
+      $("#btn_show_contact").show();
     }
   });
 
-
-
-  // make nav bar static on scroll 
-  var navbar = document.querySelector("nav.navbar");
-  var sticky = navbar.offsetHeight;
-  window.addEventListener("scroll", function () {
-    if (this.document.documentElement.scrollTop >= sticky) {
-      $(navbar).css("position", "fixed");
-    } else {
-      $(navbar).css("position", "sticky");
-    }
-  })
-
-  // carousels
+  // home carousels
   $(".car_offers .owl-carousel").owlCarousel({
     nav: false,
     loop: false,
@@ -147,6 +144,7 @@ $(document).ready(function () {
     }
   });
 
+  // car details carousel
   var changeSlide = 4; // mobile -1, desktop + 1
   // Resize and refresh page. slider-two slideBy bug remove
   var slide = changeSlide;
@@ -159,18 +157,18 @@ $(document).ready(function () {
   } else {
     var slide = changeSlide;
   }
-
+  // Make num >=9 have 0 before 01 02 ....
   function NumOf(n) {
-    return (n < 10 && n !=0) ? '0' + n : '' + n;
+    return (n < 10 && n != 0) ? '0' + n : '' + n;
   }
-  $('.one').on('initialized.owl.carousel changed.owl.carousel', function(e) {
-    if (!e.namespace)  {
-    return;
+  $('.one').on('initialized.owl.carousel changed.owl.carousel', function (e) {
+    if (!e.namespace) {
+      return;
     }
     var carousel = e.relatedTarget;
     $('.slider-counter .len').html(`${NumOf(carousel.items().length)}`)
     $('.slider-counter .current').html(`${NumOf(carousel.relative(carousel.current()) + 1)}`)
-}).owlCarousel({
+  }).owlCarousel({
     nav: true,
     navText: [`<i class="fa-solid fa-chevron-right"></i>`, `<i class="fa-solid fa-chevron-left"></i>`],
     items: 1,
