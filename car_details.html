@@ -409,27 +409,6 @@
                     <button class="main-btn w-100 my-md-3" data-bs-toggle="modal" data-bs-target="#book_modal">
                       احجزها الآن
                     </button>
-                    <!-- Modal -->
-                    <div class="modal fade" id="book_modal" tabindex="-1" aria-labelledby="book_modalLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="book_modalLabel">تأكيد الحجز </h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body">
-                            <h4 class="fs-5 mb-3">
-                              حجز اسم السيارة | رقم الاعلان
-                            </h4>
-                            <img src="images/04.webp" alt="">
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="main-btn">تأكيد</button>
-                            <button type="button" class="main-outline-btn px-4" data-bs-dismiss="modal">اغلاق</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
                     <!-- action : show div.car-contact -->
                     <button class="toggle_contact btn_show_contact main-outline-btn w-100" id="btn_show_contact" data-target="car_contact">
                       تواصل معنا للحجز
@@ -490,28 +469,6 @@
                   <i class="fa-solid fa-share"></i>
                   <span>شارك الإعلان</span>
                 </button>
-                <!-- Modal -->
-                <div class="modal fade" id="shareAd_modal" tabindex="-1" aria-labelledby="shareAd_modalLabel" aria-hidden="true">
-                  <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="shareAd_modalLabel">شارك هذا الإعلان</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body">
-                        <h4>
-                          هيونداي ستاريا واجن 2022 مستعملة لون أسود للبيع - 208452
-                        </h4>
-                        <div class="social-share">
-                          <a href="#" class="btn btn-primary me-2" target="_blank"></a>
-                        </div>
-                        <div class="copy_link">
-  
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
               <div class="car_feature border-0">
                 <div class="">
@@ -744,11 +701,57 @@
       </div>
     </footer>
 
+
+    <!-- confirm book modal -->
+    <div class="modal fade" id="book_modal" tabindex="-1" aria-labelledby="book_modalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="book_modalLabel">تأكيد الحجز </h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <h4 class="fs-5 mb-3">
+              حجز اسم السيارة | رقم الاعلان
+            </h4>
+            <img src="images/04.webp" alt="">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="main-btn">تأكيد</button>
+            <button type="button" class="main-outline-btn px-4" data-bs-dismiss="modal">اغلاق</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- share ad modal -->
+    <div class="modal fade" id="shareAd_modal" tabindex="-1" aria-labelledby="shareAd_modalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="shareAd_modalLabel">شارك هذا الإعلان</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <h4>
+              هيونداي ستاريا واجن 2022 مستعملة لون أسود للبيع - 208452
+            </h4>
+            <div class="social-share">
+              <a href="#" class="btn btn-primary me-2" target="_blank"></a>
+            </div>
+            <div class="copy_link">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- jQuery script -->
     <script src="js/jquery-3.6.0.min.js"></script>
 
     <!-- bootstrap script -->
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
     <!-- owl-carousel script -->
     <script src="js/owl.carousel.min.js"></script>
