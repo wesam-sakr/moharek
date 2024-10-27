@@ -6,15 +6,29 @@ $(document).ready(function () {
   $('#loading').fadeOut(500);
 
   // fixed nav while scrolling
-  var navbar = document.querySelector("nav.navbar");
-  var sticky = navbar.offsetHeight;
-  $('body').css('marginTop', sticky);
+  if ($('nav.navbar').length > 0) {
+    var navbar = document.querySelector("nav.navbar");
+    var sticky = navbar.offsetHeight;
+    $('body').css('marginTop', sticky);
+  }
 
   // add fav
   $(".heart").click(function () {
     $(this).toggleClass("fav");
     $(this).find('i').toggleClass('fa-regular fa-solid')
   })
+
+  // show & hide password
+  $('.pass').click(function () {
+    $(this).toggleClass("bi-eye-slash bi-eye");
+    var pass = $(this).closest('.input-group').find('input');
+    if (pass.attr("type") == "password") {
+      pass.attr("type", "text");
+    } else {
+      pass.attr("type", "password");
+    }
+  });
+
 
   // side sticky funcution
   function stickySidebar(mainBlk, sidebarWrapper, sidebarBlk) {

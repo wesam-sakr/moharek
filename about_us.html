@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moharek</title>
+
+    <link rel="icon" type="image/x-icon" href="images/logo-fav.png" />
+
+    <!-- Bootstrap link  -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+    />
+
+    <!-- font awesom link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- owl-carousel link -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+
+    <!-- WoW link -->
+    <link rel="stylesheet" href="css/animate.css" />
+
+    <!-- animate link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
+    />
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- custom css file link  -->
+    <!-- <link rel="stylesheet" href="css/style-ltr.css"> -->
+  </head>
+  <body>
+    <!-- -------- loading ----------- -->
+
+    <div id="loading">
+      <div class="loader">
+        <img src="images/logo-fav.png" alt="" />
+      </div>
+    </div>
+
+    <!-- -------- loading ends ----------- -->
+
+    <nav class="navbar navbar-expand-lg navbar-light top-0">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand m-0" href="index.html">
+          <img src="images/logo.svg" alt="" />
+        </a>
+        <div
+          class="collapse navbar-collapse justify-content-between align-items-center"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link"> الرئيسية</a>
+            </li>
+            <li class="nav-item">
+              <a href="services.html" class="nav-link"> الخدمات</a>
+            </li>
+            <li class="nav-item">
+              <a href="cars.html" class="nav-link">السيارات</a>
+            </li>
+            <li class="nav-item">
+              <a href="workshops.html" class="nav-link">مزودي الخدمات</a>
+            </li>
+            <li class="nav-item">
+              <a href="sell_car.html" class="nav-link">بيع سيارتك</a>
+            </li>
+            <li class="nav-item">
+              <a href="check_car.html" class="nav-link">حجز فحص</a>
+            </li>
+            <li class="nav-item">
+              <a href="blogs.html" class="nav-link active">المقالات</a>
+            </li>
+            <li class="nav-item">
+              <a href="contact_us.html" class="nav-link">تواصل معنا</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav m-0">
+            <li class="nav-item lang">
+              <a href="" class="nav-link" id="lang">EN</a>
+            </li>
+            <li class="nav-item auth light">
+              <a href="notifi.html" class="nav-link">
+                <i class="fa-regular fa-bell"></i>
+              </a>
+            </li>
+
+            <li class="nav-item auth">
+              <a href="login.html" class="nav-link">
+                <i class="fa-regular fa-user"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ==== start breadcrumb ==== -->
+    <nav class="breadcrumb-wrapper" aria-label="breadcrumb">
+      <div class="container-fluid">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">الرئيسية</a></li>
+          <li class="breadcrumb-item active" aria-current="page">المقالات</li>
+        </ol>
+      </div>
+    </nav>
+    <!-- ==== end breadcrumb ==== -->
+
+    <!-- من نحن -->
+    <section class="about-us mb-5 pb-md-4">
+      <div class="container-fluid">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-12 col-lg-6 mb-5 mb-lg-0">
+            <h2 class="about-title">
+              <span>محرك </span>
+              أفضل وأسرع موقع لخدمة سيارتك
+            </h2>
+            <p class="about-desc">
+              وقع محرك يوفر لك كل ما تحتاجه في عالم السيارات، من بيع وشراء
+              السيارات الجديدة والمستعملة إلى حجز خدمات الصيانة والفحص السريع مع
+              أفضل الورش والمختصين
+            </p>
+            <ul class="about-feature">
+              <li>
+                <span>1</span>
+                <h6>رؤيتنا</h6>
+                <p>
+                  وقع محرك يوفر لك كل ما تحتاجه في عالم السيارات، من بيع وشراء
+                  السيارات
+                </p>
+              </li>
+              <li>
+                <span>2</span>
+                <h6>هدفنا</h6>
+                <p>
+                  وقع محرك يوفر لك كل ما تحتاجه في عالم السيارات، من بيع وشراء
+                  السيارات
+                </p>
+              </li>
+              <li>
+                <span>3</span>
+                <h6>رسالتنا</h6>
+                <p>
+                  وقع محرك يوفر لك كل ما تحتاجه في عالم السيارات، من بيع وشراء
+                  السيارات
+                </p>
+              </li>
+            </ul>
+            <div class="w-100 mt-4">
+              <a href="about_us.html" class="main-btn text-center"> المزيد </a>
+            </div>
+          </div>
+          <div class="col-12 col-lg-5">
+            <div class="img-bg">
+              <img src="images/about us.png" class="" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--  -->
+    <section class="about-us mb-5 pb-md-4">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5 class="ab-data-title mb-3">
+                        محرك - أفضل وأسرع خدمة لسيارتك
+                    </h5>
+                    <p>
+                        اكتشف محرك، الموقع المثالي الذي يلبي جميع احتياجاتك في عالم السيارات. من بيع وشراء السيارات الجديدة والمستعملة إلى حجز خدمات الصيانة والفحص السريع، نحن نقدم لك أفضل الورش والمختصين لضمان تجربة مريحة وفعالة. انضم إلينا الآن لتستمتع بخدمات متميزة تلبي توقعاتك
+                    </p>
+                    <h5 class="mb-2">رسالتنا</h5>
+                    <p class="text-muted">
+                        في محرك، نهدف إلى تلبية جميع احتياجاتك في عالم السيارات من خلال تقديم خدمات موثوقة وسريعة. نحن نضمن لك تجربة مريحة، من شراء السيارة المناسبة لك إلى حجز خدمات الصيانة مع أفضل المختصين. انضم إلينا واكتشف الفرق
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <h5 class="ab-data-title mb-3">
+                        محرك: الحل الأمثل لخدمة سيارتك
+                    </h5>
+                    <p>
+                        محرك هو وجهتك الأولى في عالم السيارات، حيث نقدم لك كل ما تحتاجه، من شراء وبيع السيارات الجديدة والمستعملة إلى حجز خدمات الصيانة والفحص السريع. نحن نعمل مع أفضل الورش والمختصين لضمان حصولك على أفضل خدمة ممكنة. انطلق معنا في رحلة راحة وموثوقية لسيارتك
+                    </p>
+                    <h5 class="mb-2">هدفنا</h5>
+                    <p class="text-muted">
+                        في محرك، نهدف إلى تقديم تجربة متكاملة ومريحة لجميع عملائنا في مجال السيارات. نحن نسعى لتلبية جميع احتياجاتك من خلال توفير خدمات موثوقة وسريعة تشمل بيع وشراء السيارات، بالإضافة إلى حجز خدمات الصيانة والفحص السريع. نركز على الجودة والاحترافية، مما يجعلنا الخيار الأفضل لخدمة سيارتك في أي وقت
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- من نحن 2 -->
+    <section class="about-us mb-5 pb-md-4" id="about">
+      <div class="container-fluid">
+        <div class="row gy-3 align-items-center">
+          <div class="ab-img col-md-6 col-xs-12">
+            <img src="images/hero-img.png" alt="" />
+          </div>
+          <div class="ab-data col-md-6 col-xs-12">
+            <h4 class="ab-data-title">
+              تطبيق محرك السيارات: لأن رحلتك تبدأ هنا
+            </h4>
+            <p>
+              اكتشف تجربة جديدة في البحث عن السيارات مع تطبيقنا المبتكر! تم
+              تصميم التطبيق ليسهل عليك العثور على السيارات الجديدة والمستعملة
+              بسهولة وسرعة. استمتع بميزات مثل التصفية المتقدمة، تفاصيل دقيقة عن
+              كل سيارة، وإشعارات بالعروض والتخفيضات الحصرية. قم بتنزيل التطبيق
+              الآن وابدأ رحلتك في عالم السيارات
+            </p>
+            <div class="apps-btns">
+              <a href="#" class="main-btn">
+                <img src="images/apple.svg" alt="" />
+                <div>
+                  <span>حمل الان</span>
+                  <h5>Apple store</h5>
+                </div>
+              </a>
+              <a href="#">
+                <img src="images/GooglePlay.png" alt="" />
+                <div>
+                  <span>حمل الان</span>
+                  <h5>Google play</h5>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container-fluid">
+        <div class="footer-content">
+          <a href="#" id="scroll-top">
+            <i class="bi bi-chevron-double-up"></i>
+          </a>
+          <div class="links row justify-content-between">
+            <div class="col-12 col-md-6 mb-4 mb-md-5">
+              <div class="logo">
+                <img src="images/logo.svg" alt="" />
+              </div>
+              <p>
+                محرك هو تطبيق يوفر لك جميع احتياجاتك في عالم السيارات. حمله الآن
+                لتكتشف المزيد من المميزات
+              </p>
+              <div class="apps-btns">
+                <a href="#" class="main-btn">
+                  <img src="images/apple.svg" alt="" />
+                  <div>
+                    <span>حمل الان</span>
+                    <h5>Apple store</h5>
+                  </div>
+                </a>
+                <a href="#">
+                  <img src="images/GooglePlay.png" alt="" />
+                  <div>
+                    <span>حمل الان</span>
+                    <h5>Google play</h5>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <h5 class="links_title">روابط الموقع</h5>
+              <ul>
+                <li>
+                  <a href="index.html">الرئيسية</a>
+                </li>
+                <li>
+                  <a href="about_us.html">من نحن</a>
+                </li>
+                <li>
+                  <a href="cars.html">السيارات </a>
+                </li>
+                <li>
+                  <a href="workshops.html">الورش</a>
+                </li>
+                <li>
+                  <a href="check_car.html">حجز فحص</a>
+                </li>
+                <li>
+                  <a href="cars.html">الإعلانات</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-6 col-md-3">
+              <h5 class="links_title">روابط هامة</h5>
+              <ul>
+                <li>
+                  <a href="services.html"> الخدمات</a>
+                </li>
+                <li>
+                  <a href="contact_us.html"> تواصل معنا</a>
+                </li>
+                <li>
+                  <a href="jobs.html"> الوظائف </a>
+                </li>
+                <li>
+                  <a href="policy.html"> سياسة الخصوصية </a>
+                </li>
+                <li>
+                  <a href="terms.html"> الشروط والأحكام </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="send-email">
+            <div class="row align-items-center">
+              <div class="col-12 col-lg-5 mb-4 mb-lg-0">
+                <p class="justify-content-center justify-content-lg-start">
+                  <i class="bi bi-envelope-open-fill"></i> اكتب بريدك الإلكترونى
+                  وتابع كل جديد
+                </p>
+              </div>
+              <div class="col-12 col-lg-7">
+                <div class="send-email-box">
+                  <input type="text" placeholder="اكتب بريدك الالكترونى" />
+                  <button>متابعة</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyrights">
+        <div class="container-fluid">
+          <a href="https://smartvision4p.com" class="link" target="_blank"> </a>
+          <span>جميع الحقوق حفوظة لموقع سمارت فيجن</span>
+          <img src="images/smart-logo.svg" alt="" />
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery script -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+    <!-- bootstrap script -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- owl-carousel script -->
+    <script src="js/owl.carousel.min.js"></script>
+
+    <!-- font awesom script -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"
+      integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+    <!-- wow script -->
+    <script src="js/wow.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

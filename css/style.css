@@ -2150,6 +2150,163 @@ input[type=range]::-webkit-slider-thumb {
    overflow: hidden;
 }
 
+.single_blog .card:not(:last-child){
+   margin-bottom: 1.25rem;
+}
+.blogs .blog_details .card-img-top  img {
+   aspect-ratio: 7 / 4;
+}
+.blogs .blog_details .blog-desc{
+   display: block;
+   color: #4E4E4E;
+}
+/*==-------- login page  --------==*/
+body:has(.login_register){
+   background-color: #F8F8F8 !important;
+}
+.login_register .navbar-brand img,
+.login .navbar-brand img{
+   width: 90px;
+}
+.login_register{
+   position: relative;
+   height: 100vh;
+   background-image: url('../images/bg.svg');
+   background-repeat: no-repeat;
+   background-size: 100%;
+   background-position: bottom right;
+}
+.login_register::before{
+   content: url('../images/clouds.svg');
+   position: absolute;
+   top: 1rem;
+   inset-inline-end: 1rem;
+   z-index: -1;
+}
+.login_register .main-btn,
+.login_register .main-outline-btn{
+   color: var(--white) !important;
+   padding: 14px 48px;
+   font-size: 18px;
+   margin-bottom: 1.25rem;
+}
+.login_register .main-outline-btn{
+   background: transparent;
+   border-color: var(--white);
+}
+body:has(.login-form)::before{
+   content: '';
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   height: 38%;
+   background: var(--dark-blue);
+}
+.login{
+   position: relative;
+   height: 100vh;
+}
+.login-form{
+   background: #FFFFFF 0% 0% no-repeat padding-box;
+   box-shadow: -25px 25px 50px #0000000D;
+   border-radius: 30px;
+   padding: 5rem 8rem;
+   text-align: center;
+   margin-top: 3rem;
+   position: relative;
+}
+.login-form img{
+   position: absolute;
+   top: 0;
+   inset-inline-end: 0;
+   width: 32%;
+   transform: translate(0% , -50%);
+   -webkit-transform: translate(0% , -50%);
+   -moz-transform: translate(0% , -50%);
+   -ms-transform: translate(0% , -50%);
+   -o-transform: translate(0% , -50%);
+}
+.welcome{
+   color: #6B6B6B;
+   font-size: 20px;
+   margin-bottom: .5rem;
+}
+.login_type{
+   color: var(--dark-blue);
+   font-size: 20px;
+   font-weight: 500;
+   margin-bottom: 1.35rem;
+}
+.forgot{
+   color: #4E4E4E !important;
+   font-size: 14px;
+}
+.login-form label{
+   color: #707070;
+}
+.login_replace{
+   color: #707070;
+   margin-top: 1rem;
+   font-weight: 500;
+}
+.login_replace a{
+   color: var(--dark-blue);
+}
+#phone_num{
+   color: #BFBFBF;
+   position: relative;
+}
+#phone_num::after{
+   content: '|';
+   padding: 0 4px;
+}
+.login-form .form-control{
+   border: 1px solid #f9f9f9;
+   background: #f9f9f9;
+   padding-block: .65rem;
+   box-shadow: unset !important;
+}
+.input-group{
+   border-radius: 40px;
+   overflow: hidden;
+   margin: 1rem 0 .5rem 0;
+}
+.login-form .input-group-text {
+   background: #f9f9f9;
+   border: unset;
+}
+.login-form form{
+   text-align: start;
+}
+
+
+@media(max-width: 578px){
+   body:has(.login_register) {
+      background-color: #aad4f05c !important;
+   }
+   .login_register .navbar-brand img,
+   .login .navbar-brand img{
+      width: 74px !important;
+   }
+   .login_register .row{
+      margin-top: 3rem;
+   }
+   .login_register .main-btn,
+   .login_register .main-outline-btn{
+      margin-inline: 2rem;
+   }
+   .login_register .main-outline-btn{
+      border-color: var(--dark-blue);
+      color: var(--dark-blue) !important;
+   }
+
+   .login-form {
+    padding: 5rem 2rem;
+   }
+    .login-form img {
+      width: 55%;
+   }
+}
 /*==-------- workshop page  --------==*/
 .all {
    width: 100%;
@@ -2326,6 +2483,47 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 
+
+/*  */
+.contact-data .contact-info {
+   border: 1px solid #E1E1E1;
+   border-radius: 10px;
+   text-align: center;
+   padding: 2rem 1rem;
+   position: relative;
+   /* height: 100%; */
+}
+.contact-data .contact-info:not(:last-child){
+   margin-bottom: 1rem;
+}
+.contact-data .contact-info h5{
+   color: #2D2D2D;
+   font-size: 18px;
+   font-weight: 500;
+}
+.contact-data .contact-info i{
+   font-size: 32px;
+   color: var(--dark-blue);
+}
+.contact-data .contact-form{
+   background: #F8F9FB;
+   border: 1px solid #E1E1E1;
+   border-radius: 26px;
+   padding: 1rem 1.5rem;
+}
+.contact-data .contact-form h4{
+   color: var(--dark-blue);
+   font-weight: 500;
+   font-size: 20px;
+}
+.contact-data .contact-form .form-control{
+   border: unset;
+   padding: .5rem .75rem;
+}
+.contact-data .contact-form .form-control::placeholder{
+   color: #888888;
+   font-size: 14px;
+}
 /*
 .all .offer-badge {
    position: absolute;
