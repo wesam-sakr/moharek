@@ -145,11 +145,20 @@
     </nav>
     <!-- ==== end breadcrumb ==== -->
 
-    <!-- ورش الصيانة -->
+    <!-- تفاصيل السيارة -->
     <section class="container-fluid mb-5 pb-md-4">
       <div class="car-single">
         <div class="car-wrapper">
           <main class="stick-next-to col-12 col-md-8">
+            <!-- **responsive: show only sm screen** -->
+            <div class="car-details d-md-none">
+              <div class="car_feature pt-0">
+                <h5>هيونداي اكسنت سمارت 2023</h5>
+                <div class="c_badge">مستعملة</div>
+              </div>
+            </div>
+            <!-- **End responsive: show only sm screen** -->
+
             <!-- slider images -->
             <div class="single-img position-relative">
               <div class="owl-carousel owl-theme one">
@@ -202,10 +211,44 @@
                 <span class="len"> 04 </span>
               </div>
             </div>
+
+            <!-- **responsive: show only sm screen** -->
+            <div class="car-details d-md-none">
+              <div class="car_feature py-2">
+                <h5 class="price fs-6 m-0">
+                  <span>السعر </span>
+                  <span> 51,000 </span>
+                  <span>ريال </span>
+                </h5>
+                <span class="hint">السعر يشمل الضريبة المضافة</span>
+              </div>
+              <div class="car_feature py-3">
+                <button class="heart">
+                  <i class="fa-regular fa-heart"></i>
+                  <span>إضافة إلى المفضلة</span>
+                </button>
+                <!-- action : open share ad modal -->
+                <button class="share" data-bs-toggle="modal" data-bs-target="#shareAd_modal">
+                  <i class="fa-solid fa-share"></i>
+                  <span>شارك الإعلان</span>
+                </button>
+              </div>
+              <div class="car_feature py-2">
+                <div class="">
+                  <h5 class="fs-6 mb-1">
+                    <span>رقم الاعلان :</span>
+                    <b>12569</b>
+                  </h5>
+                  <p class="hint">اذكر رقم الإعلان عند الاتصال مع خدمة العملاء</p>
+                </div>
+              </div>
+            </div>
+            <!-- **End responsive: show only sm screen** -->
+
             <!-- car information -->
             <div class="car-info mt-4">
               <!-- bg-body-tertiary -->
-              <nav id="navbar-example2" class=" px-3 mb-3">
+              <nav id="car_info_nav" class="px-3 mb-3">
                 <ul class="nav nav-pills">
                   <li class="nav-item">
                     <a class="nav-link active" href="#scrollspyHeading1">معلومات السيارة</a>
@@ -429,10 +472,19 @@
                       <img src="images/exclamation.svg" alt="">
                     </li>
                   </ul>
-                  <div class="w-100 text-center mt-4">
+                  <div class="w-100 text-center my-4">
                     <a href="check_report.html" target="_blank" class="main-btn">
                       شاهد تقرير الفحص الكامل
                     </a>
+                  </div>
+                  <div class="check_report_info">
+                    <p>
+                      تاريخ الفحص:22 محرم 1446 | 2024/07/29
+                    </p>
+                    <!-- action : open Disclaimer modal -->
+                    <button class="hint fs-6" data-bs-toggle="modal" data-bs-target="#Disclaimer_modal">
+                      إخلاء مسؤولية
+                    </button>
                   </div>
                 </div>
               </div>
@@ -440,7 +492,7 @@
           </main>
           <!-- sticky aside -->
           <aside class="sticky-wrapper col-12 col-md-4">
-            <div class="car-details sticky">
+            <div class="car-details sticky d-none d-md-block">
               <div class="car_feature pt-0">
                 <h5>هيونداي اكسنت سمارت 2023</h5>
                 <div class="c_badge">مستعملة</div>
@@ -535,7 +587,7 @@
     </section>
 
     <!-- سيارات مشابهة -->
-    <section class="cars car_offers py-5 my-5 bg-transparent">
+    <section class="cars car_offers py-md-5 my-5 bg-transparent">
       <div class="container-fluid" style="padding-inline-end: 0 !important">
         <h2 class="title text-end mb-4">سيارات مشابهة</h2>
         <div class="owl-carousel">
@@ -803,6 +855,26 @@
               <input type="text" class="text" value="david@stylus.co.za" />
               <button><i class="fa fa-clone"></i></button>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Disclaimer modal -->
+    <div class="modal fade" id="Disclaimer_modal" tabindex="-1" aria-labelledby="Disclaimer_modalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="Disclaimer_modalLabel">إخلاء مسؤولية</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+          <p class="py-2">
+            صيانة السيارة وتجديدها تعتمد على حالة السيارة ونظافتها حيث أن أنواع الخدمات التي يتم إجراؤها تختلف حسب الحاجة
+          </p>
+          <p class="py-2">
+            لا يعني هذا التقرير بأي حال من الأحوال الالتزام بحالة السيارة كما ذكر بالفحص فجميع التقارير تابعة لنظام محدد في فحص السيارات ولا يمكن تحميل شركة سيارة وشركائها المسئولية بأي طريقة بسبب استخدام هذا التقرير.
+          </p>
           </div>
         </div>
       </div>

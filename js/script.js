@@ -16,7 +16,7 @@ $(document).ready(function () {
     $(this).find('i').toggleClass('fa-regular fa-solid')
   })
 
-  // side sticky
+  // side sticky funcution
   function stickySidebar(mainBlk, sidebarWrapper, sidebarBlk) {
     var main = $(mainBlk); //Our sticky block will scroll next to this one
     var stickyWrapper = $(sidebarWrapper); // General position relative wrapper for main and sticky block
@@ -46,39 +46,102 @@ $(document).ready(function () {
         stickyBlk.css('top', 100);
       }
     });
-  }
+  } // call function
   if ($(window).width() >= 992 && $('.car-single').length > 0) {
     $(window).on('load', function () {
       stickySidebar('.stick-next-to', '.sticky-wrapper', '.sticky');
     });
   }
 
-  let copyText = document.querySelector(".copy-text");
-  copyText.querySelector("button").addEventListener("click", function () {
-    let input = copyText.querySelector("input.text");
-    input.select();
-    document.execCommand("copy");
-    copyText.classList.add("active");
-    window.getSelection().removeAllRanges();
-    setTimeout(function () {
-      copyText.classList.remove("active");
-    }, 2500);
-  });
+  // share copy link
+  if ($('.copy-text').length > 0) {
+    let copyText = document.querySelector(".copy-text");
+    copyText.querySelector("button").addEventListener("click", function () {
+      let input = copyText.querySelector("input.text");
+      input.select();
+      document.execCommand("copy");
+      copyText.classList.add("active");
+      window.getSelection().removeAllRanges();
+      setTimeout(function () {
+        copyText.classList.remove("active");
+      }, 2500);
+    });
+  }
 
   // toggle car contact data
-  $(".toggle_contact").click(function () {
-    var target = $(this).data("target");
+  if ($('.toggle-car-contact').length > 0) {
+    $(".toggle_contact").click(function () {
+      var target = $(this).data("target");
 
-    $("." + target).toggleClass('d-none');
-    console.log(target);
-    if (target === "car_contact") {
-      $("#btn_show_contact").toggleClass('d-none');
-    } else {
-      console.log('else');
-      $(".car_contact").toggleClass('d-none');
-      $("#btn_show_contact").show();
+      $("." + target).toggleClass('d-none');
+      console.log(target);
+      if (target === "car_contact") {
+        $("#btn_show_contact").toggleClass('d-none');
+      } else {
+        console.log('else');
+        $(".car_contact").toggleClass('d-none');
+        $("#btn_show_contact").show();
+      }
+    });
+  }
+
+  // make report nav scroll to active link
+  if ($('#check_report_nav').length > 0) {
+    const $navLinks = $('#check_report_nav .nav.nav-pills .nav-link');
+    const $navbar = $('#check_report_nav .nav.nav-pills');
+    // التحقق من وجود عناصر التنقل
+    if ($navLinks.length === 0) {
+      console.error('No navigation links found.');
+      return;
     }
-  });
+    // تحديد الأقسام في الصفحة والتحقق منها
+    const sections = $navLinks.map(function () {
+      const section = $($(this).attr('href'));
+      if (section.length === 0) {
+        console.error(`Section not found for link: ${$(this).attr('href')}`);
+      }
+      return section.length ? section[0] : null;
+    }).get();
+    console.log('Sections:', sections); // تحقق من الأقسام
+    // التحقق من دعم IntersectionObserver
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            console.log('Section in view:', entry.target.id);
+
+            const $activeLink = $navLinks.filter(`[href="#${entry.target.id}"]`);
+
+            // إزالة الحالة النشطة عن العناصر الأخرى
+            $navLinks.removeClass('active');
+            $activeLink.addClass('active');
+
+            // تمرير الشريط بحيث يظهر العنصر النشط
+            const linkPosition = $activeLink.position().left;
+            const scrollOffset = linkPosition - ($navbar.width() / 2) + ($activeLink.outerWidth() / 2);
+            console.log('Scroll Offset:', scrollOffset);
+
+            // تأكيد ظهور الرابط بشكل كامل
+            const navbarScrollLeft = $navbar.scrollLeft();
+            const newScrollPosition = navbarScrollLeft + scrollOffset;
+
+            $navbar.animate({ scrollLeft: newScrollPosition }, 500, 'swing');
+          }
+        });
+      }, {
+        rootMargin: '0px 0px -50% 0px',
+        threshold: 0.5
+      });
+
+      // مراقبة كل قسم إذا وجد
+      sections.forEach(section => {
+        if (section) observer.observe(section);
+      });
+    } else {
+      console.error('IntersectionObserver not supported');
+    }
+  }
+
 
   // home carousels
   $(".car_offers .owl-carousel").owlCarousel({
@@ -240,155 +303,157 @@ $(document).ready(function () {
   $(".filter-header .btn-close").click(function () {
     $(".filter").toggleClass("filter-toggle");
   });
-  // Add event listeners to filter options
-  const selectedFiltersList = document.getElementById('selected-filters-list');
-  const filterInputs = document.querySelectorAll('.car_filter .form-check-input');
-  const clearAllBtn = document.getElementById('clear-all-filters');
-  if (filterInputs.length > 0) {
-    filterInputs.forEach(input => {
-      input.addEventListener('change', function () {
-        const label = this.nextElementSibling.textContent.trim();
-        if (this.checked) {
-          // Add selected filter if it's not already added
-          let existingFilter = selectedFiltersList.querySelector(`[data-filter="${this.id}"]`);
-          if (!existingFilter) {
-            const li = document.createElement('li');
-            li.textContent = label;
-            li.setAttribute('data-filter', this.id);
+  if ($('.car_filter').length > 0) {
+    // Add event listeners to filter options
+    const selectedFiltersList = document.getElementById('selected-filters-list');
+    const filterInputs = document.querySelectorAll('.car_filter .form-check-input');
+    const clearAllBtn = document.getElementById('clear-all-filters');
+    if (filterInputs.length > 0) {
+      filterInputs.forEach(input => {
+        input.addEventListener('change', function () {
+          const label = this.nextElementSibling.textContent.trim();
+          if (this.checked) {
+            // Add selected filter if it's not already added
+            let existingFilter = selectedFiltersList.querySelector(`[data-filter="${this.id}"]`);
+            if (!existingFilter) {
+              const li = document.createElement('li');
+              li.textContent = label;
+              li.setAttribute('data-filter', this.id);
 
-            // For radio buttons, associate the filter with the radio group
-            if (this.type === 'radio') {
-              const groupName = this.name;
-              const previousSelection = selectedFiltersList.querySelector(`[data-group="${groupName}"]`);
-              if (previousSelection) {
-                selectedFiltersList.removeChild(previousSelection);
+              // For radio buttons, associate the filter with the radio group
+              if (this.type === 'radio') {
+                const groupName = this.name;
+                const previousSelection = selectedFiltersList.querySelector(`[data-group="${groupName}"]`);
+                if (previousSelection) {
+                  selectedFiltersList.removeChild(previousSelection);
+                }
+                li.setAttribute('data-group', this.name);
               }
-              li.setAttribute('data-group', this.name);
+
+              const removeBtn = document.createElement('button');
+              removeBtn.className = 'remove-filter-btn';
+              removeBtn.innerHTML = '<i class="fas fa-times"></i>'; // Using Font Awesome icon
+              removeBtn.onclick = function () {
+                document.getElementById(li.getAttribute('data-filter')).checked = false;
+                selectedFiltersList.removeChild(li);
+              };
+
+              li.appendChild(removeBtn);
+              selectedFiltersList.appendChild(li);
             }
-
-            const removeBtn = document.createElement('button');
-            removeBtn.className = 'remove-filter-btn';
-            removeBtn.innerHTML = '<i class="fas fa-times"></i>'; // Using Font Awesome icon
-            removeBtn.onclick = function () {
-              document.getElementById(li.getAttribute('data-filter')).checked = false;
-              selectedFiltersList.removeChild(li);
-            };
-
-            li.appendChild(removeBtn);
-            selectedFiltersList.appendChild(li);
+          } else {
+            // Remove unselected filter
+            const itemToRemove = selectedFiltersList.querySelector(`[data-filter="${this.id}"]`);
+            if (itemToRemove) {
+              selectedFiltersList.removeChild(itemToRemove);
+            }
           }
-        } else {
-          // Remove unselected filter
-          const itemToRemove = selectedFiltersList.querySelector(`[data-filter="${this.id}"]`);
-          if (itemToRemove) {
-            selectedFiltersList.removeChild(itemToRemove);
-          }
-        }
 
-        if (selectedFiltersList.children.length > 0) {
-          selectedFiltersList.style.display = 'flex'
-        }
-        else {
-          console.log('empty')
-          selectedFiltersList.style.display = 'none'
+          if (selectedFiltersList.children.length > 0) {
+            selectedFiltersList.style.display = 'flex'
+          }
+          else {
+            console.log('empty')
+            selectedFiltersList.style.display = 'none'
+          }
+        });
+      });
+
+      // Function to clear all filters
+      clearAllBtn.addEventListener('click', function () {
+        selectedFiltersList.style.display = 'none'
+        // Uncheck all inputs
+        filterInputs.forEach(input => input.checked = false);
+
+        // Remove all selected filters from the list
+        while (selectedFiltersList.firstChild) {
+          selectedFiltersList.removeChild(selectedFiltersList.firstChild);
         }
       });
-    });
-
-    // Function to clear all filters
-    clearAllBtn.addEventListener('click', function () {
+    }
+    if (selectedFiltersList.children.length > 0) {
+      selectedFiltersList.style.display = 'flex'
+    }
+    else {
+      console.log('empty')
       selectedFiltersList.style.display = 'none'
-      // Uncheck all inputs
-      filterInputs.forEach(input => input.checked = false);
+    }
+    // price from .. to ..
+    var inputLeft = document.getElementById("input-left");
+    var inputRight = document.getElementById("input-right");
+    var thumbLeft = document.querySelector(".slider > .thumb.left");
+    var thumbRight = document.querySelector(".slider > .thumb.right");
+    var range = document.querySelector(".slider > .range");
+    var priceFrom = document.querySelector(".price-from");
+    var priceTo = document.querySelector(".price-to");
+    if (inputLeft !== null) {
+      function setLeftValue() {
+        var _this = inputLeft,
+          min = parseInt(_this.min),
+          max = parseInt(_this.max);
 
-      // Remove all selected filters from the list
-      while (selectedFiltersList.firstChild) {
-        selectedFiltersList.removeChild(selectedFiltersList.firstChild);
+        _this.value = Math.min(parseInt(_this.value), parseInt(inputRight.value) - 1);
+
+        var percent = ((_this.value - min) / (max - min)) * 100;
+
+        thumbLeft.style.left = percent + "%";
+        range.style.left = percent + "%";
+
+        // Calculate price based on range value
+        var price = parseInt(inputLeft.value) * 3; // Adjust this formula based on your requirements
+        priceFrom.textContent = price + " ج.م";
       }
-    });
-  }
-  if (selectedFiltersList.children.length > 0) {
-    selectedFiltersList.style.display = 'flex'
-  }
-  else {
-    console.log('empty')
-    selectedFiltersList.style.display = 'none'
-  }
-  // price from .. to ..
-  var inputLeft = document.getElementById("input-left");
-  var inputRight = document.getElementById("input-right");
-  var thumbLeft = document.querySelector(".slider > .thumb.left");
-  var thumbRight = document.querySelector(".slider > .thumb.right");
-  var range = document.querySelector(".slider > .range");
-  var priceFrom = document.querySelector(".price-from");
-  var priceTo = document.querySelector(".price-to");
-  if (inputLeft !== null) {
-    function setLeftValue() {
-      var _this = inputLeft,
-        min = parseInt(_this.min),
-        max = parseInt(_this.max);
+      setLeftValue();
 
-      _this.value = Math.min(parseInt(_this.value), parseInt(inputRight.value) - 1);
+      function setRightValue() {
+        var _this = inputRight,
+          min = parseInt(_this.min),
+          max = parseInt(_this.max);
 
-      var percent = ((_this.value - min) / (max - min)) * 100;
+        _this.value = Math.max(parseInt(_this.value), parseInt(inputLeft.value) + 1);
 
-      thumbLeft.style.left = percent + "%";
-      range.style.left = percent + "%";
+        var percent = ((_this.value - min) / (max - min)) * 100;
 
-      // Calculate price based on range value
-      var price = parseInt(inputLeft.value) * 3; // Adjust this formula based on your requirements
-      priceFrom.textContent = price + " ج.م";
+        thumbRight.style.right = (100 - percent) + "%";
+        range.style.right = (100 - percent) + "%";
+
+        // Calculate price based on range value
+        var price = parseInt(inputRight.value) * 3; // Adjust this formula based on your requirements
+        priceTo.textContent = price + "  ج.م";
+      }
+      setRightValue();
+
+      inputLeft.addEventListener("input", setLeftValue);
+      inputRight.addEventListener("input", setRightValue);
+
+      // Add event listeners for thumb hover and active states
+      // These listeners are not directly related to updating the price
+      inputLeft.addEventListener("mouseover", function () {
+        thumbLeft.classList.add("hover");
+      });
+      inputLeft.addEventListener("mouseout", function () {
+        thumbLeft.classList.remove("hover");
+      });
+      inputLeft.addEventListener("mousedown", function () {
+        thumbLeft.classList.add("active");
+      });
+      inputLeft.addEventListener("mouseup", function () {
+        thumbLeft.classList.remove("active");
+      });
+
+      inputRight.addEventListener("mouseover", function () {
+        thumbRight.classList.add("hover");
+      });
+      inputRight.addEventListener("mouseout", function () {
+        thumbRight.classList.remove("hover");
+      });
+      inputRight.addEventListener("mousedown", function () {
+        thumbRight.classList.add("active");
+      });
+      inputRight.addEventListener("mouseup", function () {
+        thumbRight.classList.remove("active");
+      });
     }
-    setLeftValue();
-
-    function setRightValue() {
-      var _this = inputRight,
-        min = parseInt(_this.min),
-        max = parseInt(_this.max);
-
-      _this.value = Math.max(parseInt(_this.value), parseInt(inputLeft.value) + 1);
-
-      var percent = ((_this.value - min) / (max - min)) * 100;
-
-      thumbRight.style.right = (100 - percent) + "%";
-      range.style.right = (100 - percent) + "%";
-
-      // Calculate price based on range value
-      var price = parseInt(inputRight.value) * 3; // Adjust this formula based on your requirements
-      priceTo.textContent = price + "  ج.م";
-    }
-    setRightValue();
-
-    inputLeft.addEventListener("input", setLeftValue);
-    inputRight.addEventListener("input", setRightValue);
-
-    // Add event listeners for thumb hover and active states
-    // These listeners are not directly related to updating the price
-    inputLeft.addEventListener("mouseover", function () {
-      thumbLeft.classList.add("hover");
-    });
-    inputLeft.addEventListener("mouseout", function () {
-      thumbLeft.classList.remove("hover");
-    });
-    inputLeft.addEventListener("mousedown", function () {
-      thumbLeft.classList.add("active");
-    });
-    inputLeft.addEventListener("mouseup", function () {
-      thumbLeft.classList.remove("active");
-    });
-
-    inputRight.addEventListener("mouseover", function () {
-      thumbRight.classList.add("hover");
-    });
-    inputRight.addEventListener("mouseout", function () {
-      thumbRight.classList.remove("hover");
-    });
-    inputRight.addEventListener("mousedown", function () {
-      thumbRight.classList.add("active");
-    });
-    inputRight.addEventListener("mouseup", function () {
-      thumbRight.classList.remove("active");
-    });
   }
   // === end filter page === //
 
