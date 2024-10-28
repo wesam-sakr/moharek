@@ -19,15 +19,77 @@ $(document).ready(function () {
   })
 
   // show & hide password
-  $('.pass').click(function () {
-    $(this).toggleClass("bi-eye-slash bi-eye");
-    var pass = $(this).closest('.input-group').find('input');
-    if (pass.attr("type") == "password") {
-      pass.attr("type", "text");
-    } else {
-      pass.attr("type", "password");
+  if ($('.pass').length > 0) {
+    $('.pass').click(function () {
+      $(this).toggleClass("bi-eye-slash bi-eye");
+      var pass = $(this).closest('.input-group').find('input');
+      if (pass.attr("type") == "password") {
+        pass.attr("type", "text");
+      } else {
+        pass.attr("type", "password");
+      }
+    });
+  }
+
+
+  // verification code OTP
+  if ($('#verification-input').length > 0) {
+    const inputs = Array.from(document.getElementById("verification-input").children);
+    function getFirstEmptyIndex() {
+      return inputs.findIndex((input) => input.value === "");
     }
-  });
+    inputs.forEach((input, i) => {
+      input.addEventListener("keydown", (e) => {
+        if (e.key === "Backspace") {
+          if (input.value === "" && i > 0) {
+            inputs[i - 1].value = "";
+            inputs[i - 1].focus();
+          }
+  
+          for (let j = i; j < inputs.length; j++) {
+            let value = inputs[j + 1] ? inputs[j + 1].value : "";
+            inputs[j].setRangeText(value, 0, 1, "start");
+          }
+        }
+  
+        if (e.key === "ArrowLeft" && i > 0) {
+          inputs[i - 1].focus();
+        }
+  
+        if (e.key === "ArrowRight" && i < inputs.length - 1) {
+          inputs[i + 1].focus();
+        }
+      });
+  
+      input.addEventListener("input", (e) => {
+        input.value = "";
+  
+        const start = getFirstEmptyIndex();
+        inputs[start].value = e.data;
+  
+        if (start + 1 < inputs.length) inputs[start + 1].focus();
+      });
+  
+      input.addEventListener("paste", (e) => {
+        e.preventDefault();
+  
+        const text = (event.clipboardData || window.clipboardData).getData("text");
+        const firstEmpty = getFirstEmptyIndex();
+        const start = firstEmpty !== -1 ? Math.min(i, firstEmpty) : i;
+  
+        for (let i = 0; start + i < inputs.length && i < text.length; i++) {
+          inputs[start + i].value = text.charAt(i);
+        }
+  
+        inputs[Math.min(start + text.length, inputs.length - 1)].focus();
+      });
+  
+      input.addEventListener("focus", () => {
+        const start = getFirstEmptyIndex();
+        if (start !== -1 && i > start) inputs[start].focus();
+      });
+    });
+  }
 
 
   // side sticky funcution
@@ -155,7 +217,6 @@ $(document).ready(function () {
       console.error('IntersectionObserver not supported');
     }
   }
-
 
   // home carousels
   $(".car_offers .owl-carousel").owlCarousel({
@@ -470,6 +531,18 @@ $(document).ready(function () {
     }
   }
   // === end filter page === //
+
+  // apply job upload cv
+  $(".file-input").change(function () {
+    const fileInput = $(this).find('[type="file"]')[0];
+    const label = $(this).find("[data-js-label]")[0];
+    console.log($(fileInput).val());
+    if (!$(fileInput).val()) return;
+    var value = $(fileInput)
+      .val()
+      .replace(/^.*[\\\/]/, "");
+    $(label).html(value);
+  });
 
 });
 

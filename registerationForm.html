@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moharek</title>
+
+    <link rel="icon" type="image/x-icon" href="images/logo-fav.png" />
+
+    <!-- Bootstrap link  -->
+    <link rel="stylesheet" href="css/bootstrap.rtl.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+    />
+
+    <!-- font awesom link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- owl-carousel link -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+
+    <!-- WoW link -->
+    <link rel="stylesheet" href="css/animate.css" />
+
+    <!-- animate link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
+    />
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css" />
+
+  </head>
+  <body>
+    <!-- -------- loading ----------- -->
+
+    <div id="loading">
+      <div class="loader">
+        <img src="images/logo-2.png" alt="" />
+      </div>
+    </div>
+
+    <!-- -------- loading ends ----------- -->
+
+    <main class="login py-5 p-md-5">
+        <div class="container-fluid">
+            <a class="navbar-brand m-0" href="index.html">
+              <img src="images/logo2.svg" alt=""/>
+            </a>
+            <div class="login-form pb-5">
+                <img src="images/svg_car.svg" alt="">
+                <p class="welcome">أهلًأ بكـ</p>
+                <p class="login_type">إنشاء حساب جديد</p>
+                <form action="">
+                    <div class="row gy-4 justify-content-center ">
+                        <div class="col-md-6">
+                            <label for="">الاسم</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="">المدينة</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="">كلمة المرور</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control">
+                                <button type="button" class="input-group-text" id="basic-addon2">
+                                    <i class="pass bi bi-eye-slash"></i>
+                                </button>
+                            </div>
+                            <div class="approve_terms">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <a role="button" class="forgot terms"  data-bs-toggle="modal" data-bs-target="#Term_modal">الموافقة على الشروط والأحكام</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="">أعد كتابة كلمة المرور</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control">
+                                <button type="button" class="input-group-text" id="basic-addon2">
+                                    <i class="pass bi bi-eye-slash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="login.html" class="d-block main-btn px-5"> دخول</a>
+                        </div>
+                    </div>
+                </form>
+                <p class="login_replace"> هل لديك حساب ؟  <a href="profile.html">تسجيل الدخول</a> </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Terms modal -->
+    <div class="modal fade" id="Term_modal" tabindex="-1" aria-labelledby="Term_modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="Term_modalLabel">الشروط والأحكام</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <p class="py-2">
+                مصداقية المعلومات
+                بعد الموافقة على الشروط فأنت تصرّح تلقائياً بما يلي:
+                 أنك قادر قانونياً على الدخول في عقد ملزِم لبيع السيارة أنك تبلغ من العمر 18 سنة على الأقل أنت المالك الوحيد للسيارة لا أحد لديه أي مطالبات بخصوص السيارة باستثناء شؤون التمويل التي قد تكون عالقة، والتي تكون قد أفصحت عنها لنا في حال وجودها قراءة عداد المسافة في السيارة صحيحة ودقيقة ولم يتم التلاعب بها لقد أفصحت لنا عن جميع الأمور التي يرغب المشتري الحريص بأن يعرفها، كالعيوب التي قد تنطوي عليها السيارة (مثلاً: مشاكل أو أضرار ميكانيكية كبيرة) جميع المعلومات التي زودتنا بها حول السيارة في موعد الفحص أو غيرها هي صحيحة ودقيقة من جميع النواحي السيارة مسجلة في المملكة العربية السعودية. الافتراضات التي سنضعها حول سيارتك: خالية من الأضرار، بما في ذلك الأضرار الداخلية والميكانيكية توجد نسختان من المفاتيح ليست سيارة مستوردة تستوفي المواصفات المعتمدة في دول مجلس التعاون الخليجي لم تخضع إطلاقاً للشطب من التأمين لم يتم استخدامها أبداً لتعليم القيادة، أو للتأجير، أو الاستئجار الخاص أو كسيارة إسعاف أو سيارة شرطة ليست بحالة بالغة السوء.
+            </p>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery script -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+    <!-- bootstrap script -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- owl-carousel script -->
+    <script src="js/owl.carousel.min.js"></script>
+
+    <!-- font awesom script -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"
+      integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+    <!-- wow script -->
+    <script src="js/wow.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -558,6 +558,18 @@ header .content a {
 .car_offers {
    background: #FCFCFC
 }
+.cars .price{
+   display: flex;
+   align-items: center;
+   gap: 8px;
+}
+.cars .price .old-price{
+   color: #8B8B8B !important;
+   text-decoration: line-through;
+   font-size: small;
+   font-weight: normal;
+}
+
 
 .car_offers .owl-stage,
 .ads-section .owl-stage,
@@ -697,6 +709,10 @@ header .content a {
 .about-us ul>li p {
    font-size: 17px;
    color: #575757;
+   display: -webkit-box;
+   -webkit-line-clamp: 2;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
 }
 
 .about-us ul>li span {
@@ -2166,7 +2182,7 @@ body:has(.login_register){
 }
 .login_register .navbar-brand img,
 .login .navbar-brand img{
-   width: 90px;
+   width: 75px;
 }
 .login_register{
    position: relative;
@@ -2241,6 +2257,27 @@ body:has(.login-form)::before{
    color: #4E4E4E !important;
    font-size: 14px;
 }
+.terms{
+   color: #707070 !important;
+   font-weight: 600;
+   text-decoration: underline;
+}
+.approve_terms{
+   display: flex;
+   align-items: center;
+   gap: 6px;
+   margin-top: 10px;
+}
+.approve_terms .form-check-input{
+   background-color: #FAFAFA 0% 0% no-repeat padding-box;
+   border: 1px solid #E9E9E9;
+   border-radius: 40px;
+   width: 26px;
+   height: 26px;
+}
+.approve_terms .form-check-input:checked{
+   background-color: var(--dark-blue);
+}
 .login-form label{
    color: #707070;
 }
@@ -2249,8 +2286,10 @@ body:has(.login-form)::before{
    margin-top: 1rem;
    font-weight: 500;
 }
-.login_replace a{
+.login_replace a,
+.login_replace button{
    color: var(--dark-blue);
+   background: transparent;
 }
 #phone_num{
    color: #BFBFBF;
@@ -2277,6 +2316,20 @@ body:has(.login-form)::before{
 }
 .login-form form{
    text-align: start;
+}
+#verification-input{
+   direction: ltr;
+   margin: 1.5rem 0;
+}
+#verification-input > input {
+	width: 55px;
+	height: 55px;
+   margin: 0 6px;
+   font-size: 18px;
+	text-align: center;
+	border-radius: 50%;
+	background: #FAFAFA;
+	border: 1px solid #E9E9E9;
 }
 
 
@@ -2307,6 +2360,160 @@ body:has(.login-form)::before{
       width: 55%;
    }
 }
+/*==-------- jobs page  --------==*/
+.job_item{
+   background: #F9FAFA;
+   padding: 1.5rem 2rem;
+   border-radius: 10px;
+   -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
+   -ms-border-radius: 10px;
+   -o-border-radius: 10px;
+}
+.job_item:not(:last-child){
+   margin-bottom: .5rem;
+}
+.jobTitle{
+   color: var(--dark-blue);
+   /* font-weight: bold; */
+   font-size: 20px;
+   /* margin-bottom: 1rem; */
+}
+.job_info{
+   display: flex;
+   align-items: center;
+   gap: 8px;
+   color: #919191;
+}
+
+.job-description>ul {
+   margin-bottom: 40px;
+}
+
+.job-description>ul>li {
+   display: flex;
+   align-items: flex-start;
+   margin-bottom: 20px;
+   position: relative;
+}
+
+.job-description>ul>li::before {
+   content: '';
+   width: 15px;
+   height: 15px;
+   background: #FFCC00;
+   border-radius: 50%;
+   margin-left: 15px;
+   margin-top: 6px;
+}
+
+.job-description li p {
+   margin: 0;
+   text-align: right;
+   width: calc(100% - 30px);
+   color: #979797;
+}
+
+.file-input>[type='file'] {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   opacity: 0;
+   z-index: 10;
+   cursor: pointer;
+}
+
+/*==-------- workshop page  --------==*/
+.notifi_item{
+   position: relative;
+   padding: 1.5rem 2rem;
+   padding-inline-start: 3.5rem;
+}
+.notifi_item:not(:last-child){
+   margin-bottom: .5rem;
+}
+.notifi_item a{
+   background: #F9FAFA;
+   z-index: -1;
+   border-radius: 10px;
+   -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
+   -ms-border-radius: 10px;
+   -o-border-radius: 10px;
+}
+.notifi_item .new{
+   display: inline-block;
+   width: 15px;
+   height: 15px;
+   background: #FFCC00;
+   border-radius: 50%;
+   margin-left: 15px;
+   z-index: 1;
+   position: absolute;
+   top: 50%;
+   inset-inline-start: 1.5rem;
+   transform: translateY(-50%);
+   -webkit-transform: translateY(-50%);
+   -moz-transform: translateY(-50%);
+   -ms-transform: translateY(-50%);
+   -o-transform: translateY(-50%);
+}
+.notifi_item a:visited{
+   z-index: 899678;
+   background: var(--white);
+}
+.notifi_item a:visited .new{
+   background: var(--white);
+}
+.notifi_item .notifi_img{
+   background: var(--dark-blue);
+   width: 80px;
+   height: 60px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 4px;
+   -webkit-border-radius: 4px;
+   -moz-border-radius: 8px;
+   -ms-border-radius: 8px;
+   -o-border-radius: 8px;
+}
+.notifi_item .notifi_img img{
+   filter: brightness(0) invert(1);
+   -webkit-filter: brightness(0) invert(1);
+   width: 60%;
+   object-fit: contain;
+}
+.notifi_text{
+   color: #909090;
+}
+.notifi_time{
+   color: var(--dark-blue);
+}
+@media(max-width: 578px){
+   .notifi_time {
+      top: 2rem;
+      inset-inline-end: 1.3rem;
+      position: absolute;
+      color: var(--dark-blue);
+  }
+  .notifi_item .notifi_img {
+      width: 50px;
+      height: 50px;
+   }
+   .notifi_item .new {
+      top: 2.5rem;
+      inset-inline-start: 0.5rem;
+   }
+   .notifi_item {
+      padding: 1rem;
+      padding-inline-start: 2.2rem;
+   }
+}
+/* .notifi_item.new{
+} */
 /*==-------- workshop page  --------==*/
 .all {
    width: 100%;
