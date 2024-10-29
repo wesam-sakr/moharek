@@ -31,7 +31,6 @@ $(document).ready(function () {
     });
   }
 
-
   // verification code OTP
   if ($('#verification-input').length > 0) {
     const inputs = Array.from(document.getElementById("verification-input").children);
@@ -90,7 +89,6 @@ $(document).ready(function () {
       });
     });
   }
-
 
   // side sticky funcution
   function stickySidebar(mainBlk, sidebarWrapper, sidebarBlk) {
@@ -349,25 +347,6 @@ $(document).ready(function () {
     $(".slider-two .item").removeClass("active");
     $(this).addClass("active");
   });
-  var owl2 = $('.two');
-  owl2.owlCarousel();
-  owl2.on('translated.owl.carousel', function (event) {
-    $(".right-t").removeClass("nonr-t");
-    $(".left-t").removeClass("nonl-t");
-    if ($('.two .owl-next').is(".disabled")) {
-      $(".slider-two .right-t").addClass("nonr-t");
-    }
-    if ($('.two .owl-prev').is(".disabled")) {
-      $(".slider-two .left-t").addClass("nonl-t");
-    }
-  })
-  $('.right-t').click(function () {
-    $(".slider-two .owl-prev").trigger('click');
-  });
-  $('.left-t').click(function () {
-    $(".slider-two .owl-next").trigger('click');
-  });
-
 
 
   // === start filter page === //
@@ -543,6 +522,34 @@ $(document).ready(function () {
       .replace(/^.*[\\\/]/, "");
     $(label).html(value);
   });
+
+  $("#profile_nav").click(function () {
+    $(".profile-nav").toggleClass("Pnav-toggle");
+  });
+  $(".profile-header .btn-close").click(function () {
+    $(".profile-nav").toggleClass("Pnav-toggle");
+  });
+
+  /* -------------- upload profile pic ---------------- */
+  if ($(".profile-pic").length > 0) {
+    const imgDiv = document.querySelector(".profile-pic");
+    const img = document.querySelector("#photo");
+    const file = document.querySelector("#file");
+    const uploadBtn = document.querySelector("#uploadBtn");
+
+    //when we choose a pic to upload
+
+    file.addEventListener("change", function () {
+      const choosedFile = this.files[0];
+      if (choosedFile) {
+        const reader = new FileReader();
+        reader.addEventListener("load", function () {
+          img.setAttribute("src", reader.result);
+        });
+        reader.readAsDataURL(choosedFile);
+      }
+    });
+  }
 
 });
 

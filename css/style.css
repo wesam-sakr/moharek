@@ -2425,7 +2425,7 @@ body:has(.login-form)::before{
    cursor: pointer;
 }
 
-/*==-------- workshop page  --------==*/
+/*==-------- notification page  --------==*/
 .notifi_item{
    position: relative;
    padding: 1.5rem 2rem;
@@ -2514,6 +2514,143 @@ body:has(.login-form)::before{
 }
 /* .notifi_item.new{
 } */
+
+/* --------== profile page ==-------- */
+#profile_nav {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   width: 100%;
+   background-color: var(--dark-blue);
+   border-radius: 10px;
+   color: var(--white);
+   padding: .5rem 1rem;
+   margin-bottom: 1.5rem;
+   font-size: 18px;
+}
+.profile-nav{
+   background: #FCFCFC;
+   padding: .5rem 0;
+   border-radius: 8px;
+}
+.profile-nav ul{
+   border-top: 1px solid #E8E8E8;
+   padding-top: 1.5rem
+}
+.profile-nav .nav-link {
+   display: flex;
+   align-items: center;
+   gap: 12px;
+   color: #C2C2C2;
+   position: relative;
+   margin-bottom: .5rem;
+   font-weight: 600;
+   background: transparent;
+}
+.profile-nav .nav-link :first-child{
+   width: 20px;
+}
+/* .profile-nav .nav-link .icon {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: var(--sky);
+   transition: all .3s;
+} */
+.profile-nav .nav-link.active {
+   color: var(--dark-blue);
+   background: #2778b207;
+}
+.profile-nav .nav-link.active::before{
+   position: absolute;
+   content: '';
+   width: 5px;
+   height: 80%;
+   top: 10%;
+   inset-inline-start: 0;
+   border-radius: 8px;
+   background: #FFCC00;
+}
+
+.logout {
+   color: #e50b4e;
+   display: flex;
+   width: 100%;
+   align-items: center;
+   gap: 10px;
+   background-color: transparent;
+   font-weight: bold;
+   margin-top: 1rem;
+   padding-top: 1rem;
+   padding-inline-start: 1.8rem;
+   border-top: 1px solid #E8E8E8;
+}
+.profile-data{
+   height: auto;
+   background: #fcfcfc;
+   border-radius: 8px;
+   padding: 3rem 4.5rem;
+}
+.white-bg-wrapper.flex-column {
+   padding: 2rem 1rem;
+}
+.profile-data .text-edit {
+   background: var(--red) !important;
+}
+.profile-data .text-edit:hover {
+   background: var(--sky) !important;
+}
+.profile .profile-pic-icon {
+   position: absolute;
+   bottom: -2px;
+   inset-inline-start: 3px;
+   display: flex;
+   width: 34px;
+   height: 34px;
+   border-radius: 50%;
+   align-items: center;
+   justify-content: center;
+   z-index: 3;
+   background-color: #232323;
+   color: #fff;
+   font-size: 14px;
+   transition: 0.2s;
+}
+.profile .profile-pic {
+   margin: 1rem auto;
+   width: 100px;
+   aspect-ratio: 1 / 1;
+   border-radius: 50%;
+   object-fit: contain;
+   background: radial-gradient(rgba(237, 251, 250, 0) 0%, #EDFBFA 100%);
+}
+.profile .profile-pic img {
+   object-fit: cover;
+   height: 100%;
+}
+.profile .profile-pic input {
+   cursor: pointer;
+   position: absolute;
+   bottom: -2px;
+   inset-inline-start: 3px;
+   display: flex;
+   width: 34px;
+   height: 34px;
+   border-radius: 50%;
+   z-index: 199;
+   opacity: 0;
+}
+.profile label {
+   margin-bottom: .5rem;
+}
+.profile .cart .cart-address {
+   margin-top: 0;
+}
+.orders .white-bg-wrapper {
+   border-radius: 12px;
+   padding: 1rem .5rem;
+}
+
 /*==-------- workshop page  --------==*/
 .all {
    width: 100%;
