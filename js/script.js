@@ -127,6 +127,25 @@ $(document).ready(function () {
     });
   }
 
+
+  // toggle car contact data
+  if ($('.toggle_contact').length > 0) {
+    $(".toggle_contact").click(function () {
+      console.log('gdgfdhjk');
+      var target = $(this).data("target");
+
+      $("." + target).toggleClass('d-none');
+      console.log(target);
+      if (target === "car_contact") {
+        $("#btn_show_contact").toggleClass('d-none');
+      } else {
+        console.log('else');
+        $(".car_contact").toggleClass('d-none');
+        $("#btn_show_contact").show();
+      }
+    });
+  }
+
   // share copy link
   if ($('.copy-text').length > 0) {
     let copyText = document.querySelector(".copy-text");
@@ -139,23 +158,6 @@ $(document).ready(function () {
       setTimeout(function () {
         copyText.classList.remove("active");
       }, 2500);
-    });
-  }
-
-  // toggle car contact data
-  if ($('.toggle-car-contact').length > 0) {
-    $(".toggle_contact").click(function () {
-      var target = $(this).data("target");
-
-      $("." + target).toggleClass('d-none');
-      console.log(target);
-      if (target === "car_contact") {
-        $("#btn_show_contact").toggleClass('d-none');
-      } else {
-        console.log('else');
-        $(".car_contact").toggleClass('d-none');
-        $("#btn_show_contact").show();
-      }
     });
   }
 
@@ -547,6 +549,7 @@ $(document).ready(function () {
           img.setAttribute("src", reader.result);
         });
         reader.readAsDataURL(choosedFile);
+        $('.profile-pic .save_img').css("opacity", 1);
       }
     });
   }

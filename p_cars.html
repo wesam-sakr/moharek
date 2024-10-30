@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moharek</title>
+
+    <link rel="icon" type="image/x-icon" href="images/logo-fav.png" />
+
+    <!-- Bootstrap link  -->
+    <link rel="stylesheet" href="css/bootstrap.rtl.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+    />
+
+    <!-- font awesom link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- owl-carousel link -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+
+    <!-- WoW link -->
+    <link rel="stylesheet" href="css/animate.css" />
+
+    <!-- animate link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
+    />
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- custom css file link  -->
+    <!-- <link rel="stylesheet" href="css/style-ltr.css"> -->
+  </head>
+
+  <body>
+    <!-- -------- loading ----------- -->
+
+    <div id="loading">
+      <div class="loader">
+        <img src="images/logo-fav.png" alt="" />
+      </div>
+    </div>
+
+    <!-- -------- loading ends ----------- -->
+
+    <nav class="navbar navbar-expand-lg navbar-light top-0">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand m-0" href="index.html">
+          <img src="images/logo.svg" alt="" />
+        </a>
+        <div
+          class="collapse navbar-collapse justify-content-between align-items-center"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link"> الرئيسية</a>
+            </li>
+            <li class="nav-item">
+              <a href="services.html" class="nav-link"> الخدمات</a>
+            </li>
+            <li class="nav-item">
+              <a href="cars.html" class="nav-link">السيارات</a>
+            </li>
+            <li class="nav-item">
+              <a href="workshops.html" class="nav-link">مزودي الخدمات</a>
+            </li>
+            <li class="nav-item">
+              <a href="sell_car.html" class="nav-link">بيع سيارتك</a>
+            </li>
+            <li class="nav-item">
+              <a href="check_car.html" class="nav-link">حجز فحص</a>
+            </li>
+            <li class="nav-item">
+              <a href="blogs.html" class="nav-link">المقالات</a>
+            </li>
+            <li class="nav-item">
+              <a href="contact_us.html" class="nav-link">تواصل معنا</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav m-0">
+            <li class="nav-item lang">
+              <a href="" class="nav-link" id="lang">EN</a>
+            </li>
+            <li class="nav-item auth light">
+              <a href="notifi.html" class="nav-link">
+                <i class="fa-regular fa-bell"></i>
+              </a>
+            </li>
+
+            <li class="nav-item auth">
+              <a href="login&register.html" class="nav-link">
+                <i class="fa-regular fa-user"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ==== start breadcrumb ==== -->
+    <nav class="breadcrumb-wrapper" aria-label="breadcrumb">
+      <div class="container-fluid">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">الرئيسية</a></li>
+          <li class="breadcrumb-item active" aria-current="page">
+            الملف الشخصي
+          </li>
+        </ol>
+      </div>
+    </nav>
+    <!-- ==== end breadcrumb ==== -->
+
+    <!--  -->
+    <div class="container-fluid mb-5 pb-md-4">
+      <!-- profile -->
+      <section class="profile mb-5">
+        <div class="container-lg">
+          <div class="row">
+            <aside class="col-md-4 col-lg-3">
+              <div class="profile-nav">
+                <div class="profile-header d-md-none">
+                  <h5>الملف الشخصي</h5>
+                  <button class="btn-close"></button>
+                </div>
+                <!-- profile-picture -->
+                <form action="">
+                  <div class="profile-pic position-relative">
+                    <img
+                      class="w-100"
+                      src="images/avatar.png"
+                      alt=""
+                      id="photo"
+                    />
+                    <div class="profile-pic-icon">
+                      <i class="bi bi-camera-fill"></i>
+                    </div>
+                    <input
+                      type="file"
+                      id="file"
+                      name="photo_profile"
+                      accept="image/*"
+                    />
+                    <button type="submit" class="save_img">
+                      <i class="bi bi-check-lg"></i>
+                    </button>
+                  </div>
+                </form>
+                <!-- user info -->
+                <div class="user_info">
+                  <b>USERNAME</b>
+                  <p class="mt-2">admin@gmail.com</p>
+                </div>
+                <!-- profile navigation -->
+                <ul class="nav w-100 flex-column">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="profile.html">
+                      <i class="bi bi-person"></i>
+                      <span> الملف الشخصي </span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="p_changePass.html">
+                      <i class="bi bi-lock"></i>
+                      <span> كلمة المرور </span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="p_favourite.html">
+                      <i class="bi bi-heart"></i>
+                      <span> المفضلة </span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="p_cars.html">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-car-front"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M4 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0m10 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2zM4.862 4.276 3.906 6.19a.51.51 0 0 0 .497.731c.91-.073 2.35-.17 3.597-.17s2.688.097 3.597.17a.51.51 0 0 0 .497-.731l-.956-1.913A.5.5 0 0 0 10.691 4H5.309a.5.5 0 0 0-.447.276"
+                        />
+                        <path
+                          d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679q.05.242.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.8.8 0 0 0 .381-.404l.792-1.848ZM4.82 3a1.5 1.5 0 0 0-1.379.91l-.792 1.847a1.8 1.8 0 0 1-.853.904.8.8 0 0 0-.43.564L1.03 8.904a1.5 1.5 0 0 0-.03.294v.413c0 .796.62 1.448 1.408 1.484 1.555.07 3.786.155 5.592.155s4.037-.084 5.592-.155A1.48 1.48 0 0 0 15 9.611v-.413q0-.148-.03-.294l-.335-1.68a.8.8 0 0 0-.43-.563 1.8 1.8 0 0 1-.853-.904l-.792-1.848A1.5 1.5 0 0 0 11.18 3z"
+                        />
+                      </svg>
+                      <span> سياراتي </span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="p_ads.html">
+                      <i class="bi bi-megaphone"></i>
+                      <span> إعلاناتي </span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <form action="">
+                      <button class="logout nav-link">
+                        <img
+                          src="images/power-button.svg"
+                          alt=""
+                          style="width: 16px"
+                        />
+                        <span> تسجيل خروج </span>
+                      </button>
+                    </form>
+                  </li>
+                </ul>
+              </div>
+            </aside>
+
+            <main class="col col-md-8 col-lg-9">
+              <!-- action : open profile nav @ sm media -->
+              <button id="profile_nav" class="d-md-none">
+                <h6>سياراتي</h6>
+                <i class="bi bi-sliders fs-5"></i>
+              </button>
+              <!-- end -->
+              <div class="profile-data">
+                <div class="my_cars">
+                    <div class="own_car">
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="images/35.png" alt="">
+                            <h6 class="fw-bold">جيتور 2023 Luxury X70</h6>
+                        </div>
+                        <div class="take_action gap-3">
+                          <button class="open_car_modal" data-bs-toggle="modal" data-bs-target="#car_details">
+                            تفاصيل السيارة
+                          </button>
+                          <a href="sell_car.html" class="main-btn"> بيع السيارة </a>
+                        </div>
+                    </div>
+                    <div class="own_car">
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="images/38.png" alt="">
+                            <h6 class="fw-bold">جيتور 2023 Luxury X70</h6>
+                        </div>
+                        <div class="take_action gap-3">
+                          <button class="open_car_modal" data-bs-toggle="modal" data-bs-target="#car_details">
+                            تفاصيل السيارة
+                          </button>
+                          <a href="sell_car.html" class="main-btn"> بيع السيارة </a>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </main>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <div class="container-fluid">
+        <div class="footer-content">
+          <a href="#" id="scroll-top">
+            <i class="bi bi-chevron-double-up"></i>
+          </a>
+          <div class="links row justify-content-between">
+            <div class="col-12 col-md-6 mb-4 mb-md-5">
+              <div class="logo">
+                <img src="images/logo.svg" alt="" />
+              </div>
+              <p>
+                محرك هو تطبيق يوفر لك جميع احتياجاتك في عالم السيارات. حمله الآن
+                لتكتشف المزيد من المميزات
+              </p>
+              <div class="apps-btns">
+                <a href="#" class="main-btn">
+                  <img src="images/apple.svg" alt="" />
+                  <div>
+                    <span>حمل الان</span>
+                    <h5>Apple store</h5>
+                  </div>
+                </a>
+                <a href="#">
+                  <img src="images/GooglePlay.png" alt="" />
+                  <div>
+                    <span>حمل الان</span>
+                    <h5>Google play</h5>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <h5 class="links_title">روابط الموقع</h5>
+              <ul>
+                <li>
+                  <a href="index.html">الرئيسية</a>
+                </li>
+                <li>
+                  <a href="about_us.html">من نحن</a>
+                </li>
+                <li>
+                  <a href="cars.html">السيارات </a>
+                </li>
+                <li>
+                  <a href="workshops.html">الورش</a>
+                </li>
+                <li>
+                  <a href="check_car.html">حجز فحص</a>
+                </li>
+                <li>
+                  <a href="cars.html">الإعلانات</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-6 col-md-3">
+              <h5 class="links_title">روابط هامة</h5>
+              <ul>
+                <li>
+                  <a href="services.html"> الخدمات</a>
+                </li>
+                <li>
+                  <a href="contact_us.html"> تواصل معنا</a>
+                </li>
+                <li>
+                  <a href="jobs.html"> الوظائف </a>
+                </li>
+                <li>
+                  <a href="policy.html"> سياسة الخصوصية </a>
+                </li>
+                <li>
+                  <a href="terms.html"> الشروط والأحكام </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="send-email">
+            <div class="row align-items-center">
+              <div class="col-12 col-lg-5 mb-4 mb-lg-0">
+                <p class="justify-content-center justify-content-lg-start">
+                  <i class="bi bi-envelope-open-fill"></i> اكتب بريدك الإلكترونى
+                  وتابع كل جديد
+                </p>
+              </div>
+              <div class="col-12 col-lg-7">
+                <div class="send-email-box">
+                  <input type="text" placeholder="اكتب بريدك الالكترونى" />
+                  <button>متابعة</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyrights">
+        <div class="container-fluid">
+          <a href="https://smartvision4p.com" class="link" target="_blank"> </a>
+          <span>جميع الحقوق حفوظة لموقع سمارت فيجن</span>
+          <img src="images/smart-logo.svg" alt="" />
+        </div>
+      </div>
+    </footer>
+
+    <!-- car details modal -->
+    <div
+      class="modal fade"
+      id="car_details"
+      tabindex="-1"
+      aria-labelledby="car_detailsLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="car_detailsLabel">معلومات السيارة</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <li>الماركة : هيونداي</li>
+              <li>النوع : اكسنت</li>
+              <li>الموديل : 2023</li>
+              <li>الفئة : سمارت</li>
+              <li>اللون الخارجي : رمادي</li>
+              <li>اللون الداخلي: بيج</li>
+              <li>الوارد : سعودي</li>
+              <li>نوع الوقود : بنزين</li>
+              <li>نوع القير: اوتوماتيك</li>
+              <li>سرعات القير: 6</li>
+              <li>عدد السلندرات : 4 سيليندر</li>
+              <li>الحالة: جديدة</li>
+              <li>حجم المحرك : 1.4</li>
+              <li>نوع الدفع: FWD دفع امامي</li>
+              <li>عدد مفاتيح السيارة : 1</li>
+              <li>عدد المقاعد : 5</li>
+              <li>نوع المحرك : تنفس طبيعي</li>
+              <li>سعة خزان الوقود : 45 لتر</li>
+              <li>القدرة بالحصان : 100 حصان</li>
+              <li>عدد الابواب : 4</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery script -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+    <!-- bootstrap script -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- owl-carousel script -->
+    <script src="js/owl.carousel.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+    <!-- wow script -->
+    <script src="js/wow.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
