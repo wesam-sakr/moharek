@@ -44,45 +44,45 @@ $(document).ready(function () {
             inputs[i - 1].value = "";
             inputs[i - 1].focus();
           }
-  
+
           for (let j = i; j < inputs.length; j++) {
             let value = inputs[j + 1] ? inputs[j + 1].value : "";
             inputs[j].setRangeText(value, 0, 1, "start");
           }
         }
-  
+
         if (e.key === "ArrowLeft" && i > 0) {
           inputs[i - 1].focus();
         }
-  
+
         if (e.key === "ArrowRight" && i < inputs.length - 1) {
           inputs[i + 1].focus();
         }
       });
-  
+
       input.addEventListener("input", (e) => {
         input.value = "";
-  
+
         const start = getFirstEmptyIndex();
         inputs[start].value = e.data;
-  
+
         if (start + 1 < inputs.length) inputs[start + 1].focus();
       });
-  
+
       input.addEventListener("paste", (e) => {
         e.preventDefault();
-  
+
         const text = (event.clipboardData || window.clipboardData).getData("text");
         const firstEmpty = getFirstEmptyIndex();
         const start = firstEmpty !== -1 ? Math.min(i, firstEmpty) : i;
-  
+
         for (let i = 0; start + i < inputs.length && i < text.length; i++) {
           inputs[start + i].value = text.charAt(i);
         }
-  
+
         inputs[Math.min(start + text.length, inputs.length - 1)].focus();
       });
-  
+
       input.addEventListener("focus", () => {
         const start = getFirstEmptyIndex();
         if (start !== -1 && i > start) inputs[start].focus();
@@ -554,6 +554,40 @@ $(document).ready(function () {
     });
   }
 
+  const nextButton = document.getElementById('nextButton');
+
+  function isAllInputsFilled() {
+      let filled = true;
+      $('[required]').each(function() {
+          if ($(this).attr('type') === 'file') {
+              if ($(this)[0].files.length === 0) {
+                  filled = false;
+              }
+          } else if ($(this).val().trim() === '' || $(this).val() === $(this).find('option:first').val()) { // التأكد من أن القيمة ليست الخيار الافتراضي
+              filled = false;
+          }
+      });
+      return filled;
+  }
+  
+  $(document).on('input change', '[required]', function() {
+      if (isAllInputsFilled()) {
+          $(nextButton).removeClass('disabled-link');
+      } else {
+          $(nextButton).addClass('disabled-link');
+      }
+  });
+  
+  $(nextButton).on('click', function(event) {
+      if (!isAllInputsFilled()) {
+          event.preventDefault();
+          alert('يرجى ملء جميع البيانات قبل الانتقال.');
+      }
+  });
+  
+  
+
+  
 });
 
 $(function () {

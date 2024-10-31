@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moharek</title>
+
+    <link rel="icon" type="image/x-icon" href="images/logo-fav.png" />
+
+    <!-- Bootstrap link  -->
+    <link rel="stylesheet" href="css/bootstrap.rtl.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+    />
+
+    <!-- font awesom link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- owl-carousel link -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+
+    <!-- WoW link -->
+    <link rel="stylesheet" href="css/animate.css" />
+
+    <!-- animate link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
+    />
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- -------- loading ----------- -->
+
+    <div id="loading">
+      <div class="loader">
+        <img src="images/logo-fav.png" alt="" />
+      </div>
+    </div>
+
+    <!-- -------- loading ends ----------- -->
+
+    <nav class="navbar navbar-expand-lg navbar-light top-0">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand m-0" href="index.html">
+          <img src="images/logo.svg" alt="" />
+        </a>
+        <div
+          class="collapse navbar-collapse justify-content-between align-items-center"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link"> الرئيسية</a>
+            </li>
+            <li class="nav-item">
+              <a href="services.html" class="nav-link"> الخدمات</a>
+            </li>
+            <li class="nav-item">
+              <a href="cars.html" class="nav-link">السيارات</a>
+            </li>
+            <li class="nav-item">
+              <a href="workshops.html" class="nav-link">مزودي الخدمات</a>
+            </li>
+            <li class="nav-item">
+              <a href="sell_car.html" class="nav-link">بيع سيارتك</a>
+            </li>
+            <li class="nav-item">
+              <a href="check_car.html" class="nav-link">حجز فحص</a>
+            </li>
+            <li class="nav-item">
+              <a href="blogs.html" class="nav-link">المقالات</a>
+            </li>
+            <li class="nav-item">
+              <a href="contact_us.html" class="nav-link">تواصل معنا</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav m-0">
+            <li class="nav-item lang">
+              <a href="" class="nav-link" id="lang">EN</a>
+            </li>
+            <li class="nav-item auth light">
+              <a href="notifi.html" class="nav-link">
+                <i class="fa-regular fa-bell"></i>
+              </a>
+            </li>
+
+            <li class="nav-item auth">
+              <a href="login&register.html" class="nav-link">
+                <i class="fa-regular fa-user"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ==== start breadcrumb ==== -->
+    <nav class="breadcrumb-wrapper" aria-label="breadcrumb">
+      <div class="container-fluid">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">الرئيسية</a></li>
+          <li class="breadcrumb-item active" aria-current="page">بيع سيارتك</li>
+        </ol>
+      </div>
+    </nav>
+    <!-- ==== end breadcrumb ==== -->
+
+    <main>
+      <div class="container-fluid">
+        <div class="sell_car">
+          <!-- خطوات النموذج -->
+          <div class="steps-container">
+            <div class="step active">
+              <span class="step_num">1</span>
+              <span class="step_name">معلومات سيارتك</span>
+            </div>
+            <div class="step">
+              <span class="step_num">2</span>
+              <span class="step_name">السعر التقديري</span>
+            </div>
+            <div class="step">
+              <span class="step_num">3</span>
+              <span class="step_name">حجز موعد الفحص</span>
+            </div>
+          </div>
+
+          <div class="step-part" id="part-1">
+            <h2>اختر معلومات سيارتك</h2>
+            <form>
+              <div class="row gy-3">
+                <div class="col-12">
+                  <select
+                    name="car_make_id"
+                    id="carBrand"
+                    class="form-control form-select"
+                    required
+                  >
+                    <option hidden="">اختر ماركة السيارة</option>
+                    <option value="4">تويوتا</option>
+                    <option value="5">هوندا</option>
+                    <option value="6">استون مارتن</option>
+                    <option value="7">الفا روميو</option>
+                    <option value="8">اودي</option>
+                    <option value="9">ايسوزو</option>
+                    <option value="10">انفنتي</option>
+                    <option value="11">اوبل</option>
+                    <option value="12">بنتلي</option>
+                    <option value="13">بورش</option>
+                    <option value="14">بونتياك</option>
+                    <option value="15">بي ام دبليو</option>
+                    <option value="16">بيجو</option>
+                    <option value="17">جاغوار</option>
+                    <option value="18">جريت وول</option>
+                    <option value="19">جي إم سي</option>
+                    <option value="20">جيب</option>
+                    <option value="21">دايهاتسو</option>
+                    <option value="22">دايو</option>
+                    <option value="23">دودج</option>
+                    <option value="24">روفر</option>
+                    <option value="25">رولز رویس</option>
+                    <option value="26">رينو</option>
+                    <option value="27">ساب</option>
+                    <option value="28">ساتورن</option>
+                    <option value="29">سانج يونج</option>
+                    <option value="30">ستروين</option>
+                    <option value="31">سكودا</option>
+                    <option value="32">سوبارو</option>
+                    <option value="33">سوزوكي</option>
+                    <option value="34">سيات</option>
+                    <option value="35">شفروليه</option>
+                    <option value="36">شيري</option>
+                    <option value="37">فورد</option>
+                    <option value="38">كيا</option>
+                    <option value="39">فولفو</option>
+                    <option value="40">فولكس فاجن</option>
+                    <option value="41">فيات</option>
+                    <option value="42">فيراري</option>
+                    <option value="43">كاديلاك</option>
+                    <option value="44">كرايسلر</option>
+                    <option value="45">لادا</option>
+                    <option value="46">لامبورغيني</option>
+                    <option value="47">لاند روفر</option>
+                    <option value="48">لكزس</option>
+                    <option value="49">لوتس</option>
+                    <option value="50">لينكولن</option>
+                    <option value="51">مازدا</option>
+                    <option value="52">مازيراتي</option>
+                    <option value="53">مرسيدس</option>
+                    <option value="54">مورغان</option>
+                    <option value="55">ميتسوبيشي</option>
+                    <option value="56">ميركوري</option>
+                    <option value="57">ميني</option>
+                    <option value="58">نيسان</option>
+                    <option value="59">همر</option>
+                    <option value="60">هيونداي</option>
+                    <option value="61">افيكو</option>
+                    <option value="63">سمارت</option>
+                    <option value="64">سنتشري</option>
+                    <option value="65">فيسكر</option>
+                    <option value="66">فاو</option>
+                    <option value="67">جيلي</option>
+                    <option value="69">شانجان</option>
+                    <option value="70">ليفان</option>
+                    <option value="71">JMC</option>
+                    <option value="72">ماكلارين</option>
+                    <option value="73">فكتوريا اوتو</option>
+                    <option value="74">بي واي دي</option>
+                    <option value="75">بايك</option>
+                    <option value="76">مان</option>
+                    <option value="77">تاتا</option>
+                    <option value="78">ام جي</option>
+                    <option value="79">فوتون</option>
+                    <option value="80">جنجو</option>
+                    <option value="81">زد أكس أوتو</option>
+                    <option value="82">JAC</option>
+                    <option value="83">هايجر</option>
+                    <option value="84">بيوك</option>
+                    <option value="85">هافال</option>
+                    <option value="86">سي ام سي</option>
+                    <option value="88">تسلا</option>
+                    <option value="90">GAC</option>
+                    <option value="91">هينو</option>
+                    <option value="92">ماكسيوس</option>
+                    <option value="93">سي اتش تي سي</option>
+                    <option value="94">بورجوارد</option>
+                    <option value="95">جيتور</option>
+                    <option value="96">اشوك</option>
+                    <option value="97">ماهيندرا</option>
+                    <option value="98">جينيسيس</option>
+                    <option value="99">ساوايست</option>
+                    <option value="100">دونج فينج</option>
+                    <option value="103">هونشي</option>
+                    <option value="105">اكسيد</option>
+                    <option value="108">لينك اند كو</option>
+                    <option value="109">لوسيد</option>
+                    <option value="110">زوتي</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <select
+                    name="car_model_id"
+                    class="form-control form-select"
+                    required
+                  >
+                    <option hidden="">اختر الموديل</option>
+                    <option value="1753">F3</option>
+                    <option value="1754">F5</option>
+                    <option value="1755">S6</option>
+                    <option value="1756">S7</option>
+                    <option value="2003">F7</option>
+                    <option value="2037">سونج ماكس</option>
+                    <option value="2073">تانغ</option>
+                    <option value="2074">سونغ برو</option>
+                    <option value="2075">تشين برو</option>
+                    <option value="2327">سونج بلس</option>
+                    <option value="2328">تشين بلس</option>
+                    <option value="2329">سيل</option>
+                    <option value="2330">هان</option>
+                    <option value="2331">اتو 3</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <select
+                    name="car_trim_id"
+                    class="form-control form-select"
+                    required
+                  >
+                    <option disabled="" hidden="" value=""></option>
+                    <option hidden="">اختر الفئة</option>
+                    <option value="1">G</option>
+                    <option value="3">Gx</option>
+                    <option value="5">Gxr1</option>
+                    <option value="7">Vxr1</option>
+                    <option value="160">Vxs</option>
+                    <option value="378">Vx.E</option>
+                    <option value="418">Vx</option>
+                    <option value="584">Gxr1 Plus</option>
+                    <option value="585">Gxr2</option>
+                    <option value="586">Gxr2 Plus</option>
+                    <option value="587">Gxr3</option>
+                    <option value="588">Gxr4</option>
+                    <option value="765">Vxr</option>
+                    <option value="767">Exr</option>
+                    <option value="1128">Grand Touring</option>
+                    <option value="1130">Gxr</option>
+                    <option value="1268">Gr Sport</option>
+                    <option value="1498">Gx Dsl</option>
+                    <option value="1499">Gxr2 Dsl</option>
+                    <option value="1500">Gxr3 Dsl</option>
+                    <option value="1501">Gxr4 Dsl</option>
+                    <option value="1503">Gr-S Dsl</option>
+                    <option value="1688">Gxr5</option>
+                    <option value="2110">Gxr1 Dsl</option>
+                    <option value="2266">Gr-S</option>
+                    <option value="2507">Lx</option>
+                    <option value="2559">Gxr-V</option>
+                    <option value="2683">Gxr3 V6 Mr</option>
+                    <option value="2684">Gxr3 V8 Mr Dsl</option>
+                    <option value="2685">Gxr3 V8 Mr</option>
+                    <option value="2686">Gxr L5</option>
+                    <option value="2687">Gxr L4</option>
+                    <option value="2688">Gxr L4</option>
+                    <option value="2689">Gxr L3</option>
+                    <option value="2690">Gxr L2</option>
+                    <option value="2691">Gxr L1</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <select name="year" class="form-control form-select" required>
+                    <option hidden="">اختر سنة الصنع</option>
+                    <option value="2025">2025</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                    <option value="2019">2019</option>
+                    <option value="2018">2018</option>
+                    <option value="2017">2017</option>
+                    <option value="2016">2016</option>
+                    <option value="2015">2015</option>
+                    <option value="2014">2014</option>
+                    <option value="2013">2013</option>
+                    <option value="2012">2012</option>
+                    <option value="2011">2011</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <select
+                    name="odometer_range_id"
+                    class="form-control form-select"
+                    required
+                  >
+                    <option hidden="">الممشى</option>
+                    <option value="0">من صفر الى 10 الف كم</option>
+                    <option value="1">من 10 الى 50 الف كم</option>
+                    <option value="2">من 50 الف كم الى 70 الف كم</option>
+                    <option value="3">من 70 الف كم الى 100 الف كم</option>
+                    <option value="4">من 100 الف كم الى 130 الف كم</option>
+                    <option value="5">من 130 الف كم الى 190 الف كم</option>
+                    <option value="6">اكثر من 190 الف كم</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <select
+                    name="car_condition_id"
+                    class="form-control form-select"
+                    required
+                  >
+                    <option hidden="">حالة السيارة</option>
+                    <option value="1">تعرضت لحادث مروع</option>
+                    <option value="2">تعرضت لحادث طفيف</option>
+                    <option value="3">بدون حوادث</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <select name="color_id" class="form-control form-select" required>
+                    <option hidden="">لون السيارة</option>
+                    <option value="1">أبيض</option>
+                    <option value="10">رمادي</option>
+                    <option value="11">أزرق غامق ( كحلي )</option>
+                    <option value="12">زيتي</option>
+                    <option value="13">برتقالي</option>
+                    <option value="14">ذهبي</option>
+                    <option value="15">برونزي</option>
+                    <option value="16">بيج</option>
+                    <option value="17">جملي</option>
+                    <option value="18">أسمنتي</option>
+                    <option value="19">بني غامق</option>
+                    <option value="2">أسود</option>
+                    <option value="20">أرزق فاتح</option>
+                    <option value="21">عنابي ( نبيتي )</option>
+                    <option value="22">بترولي</option>
+                    <option value="23">رمادي فاتح</option>
+                    <option value="24">بنفسجي</option>
+                    <option value="25">ليموني</option>
+                    <option value="26">رصاصي</option>
+                    <option value="27">رصاصي غامق</option>
+                  </select>
+
+                  <div class="col-12">
+                    <label for="">هل السيارة مملوكة أو أقساط؟</label>
+                    <input type="radio" class="btn-check" name="options-base" id="option5" autocomplete="off">
+                    <label class="btn" for="option5">مملوكة</label>
+
+                    <input type="radio" class="btn-check" name="options-base" id="option6" autocomplete="off">
+                    <label class="btn" for="option6">أقساط</label>
+
+                  </div>
+                </div>
+              </div>
+
+
+
+
+              <a href="otp.html" id="nextButton" class="d-block main-btn ms-auto disabled-link">
+                التالي
+              </a>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container-fluid">
+        <div class="footer-content">
+          <a href="#" id="scroll-top">
+            <i class="bi bi-chevron-double-up"></i>
+          </a>
+          <div class="links row justify-content-between">
+            <div class="col-12 col-md-6 mb-4 mb-md-5">
+              <div class="logo">
+                <img src="images/logo.svg" alt="" />
+              </div>
+              <p>
+                محرك هو تطبيق يوفر لك جميع احتياجاتك في عالم السيارات. حمله الآن
+                لتكتشف المزيد من المميزات
+              </p>
+              <div class="apps-btns">
+                <a href="#" class="main-btn">
+                  <img src="images/apple.svg" alt="" />
+                  <div>
+                    <span>حمل الان</span>
+                    <h5>Apple store</h5>
+                  </div>
+                </a>
+                <a href="#">
+                  <img src="images/GooglePlay.png" alt="" />
+                  <div>
+                    <span>حمل الان</span>
+                    <h5>Google play</h5>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <h5 class="links_title">روابط الموقع</h5>
+              <ul>
+                <li>
+                  <a href="index.html">الرئيسية</a>
+                </li>
+                <li>
+                  <a href="about_us.html">من نحن</a>
+                </li>
+                <li>
+                  <a href="cars.html">السيارات </a>
+                </li>
+                <li>
+                  <a href="workshops.html">الورش</a>
+                </li>
+                <li>
+                  <a href="check_car.html">حجز فحص</a>
+                </li>
+                <li>
+                  <a href="cars.html">الإعلانات</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-6 col-md-3">
+              <h5 class="links_title">روابط هامة</h5>
+              <ul>
+                <li>
+                  <a href="services.html"> الخدمات</a>
+                </li>
+                <li>
+                  <a href="contact_us.html"> تواصل معنا</a>
+                </li>
+                <li>
+                  <a href="jobs.html"> الوظائف </a>
+                </li>
+                <li>
+                  <a href="policy.html"> سياسة الخصوصية </a>
+                </li>
+                <li>
+                  <a href="terms.html"> الشروط والأحكام </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="send-email">
+            <div class="row align-items-center">
+              <div class="col-12 col-lg-5 mb-4 mb-lg-0">
+                <p class="justify-content-center justify-content-lg-start">
+                  <i class="bi bi-envelope-open-fill"></i> اكتب بريدك الإلكترونى
+                  وتابع كل جديد
+                </p>
+              </div>
+              <div class="col-12 col-lg-7">
+                <div class="send-email-box">
+                  <input type="text" placeholder="اكتب بريدك الالكترونى" />
+                  <button>متابعة</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyrights">
+        <div class="container-fluid">
+          <a href="https://smartvision4p.com" class="link" target="_blank"> </a>
+          <span>جميع الحقوق حفوظة لموقع سمارت فيجن</span>
+          <img src="images/smart-logo.svg" alt="" />
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery script -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+    <!-- bootstrap script -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- owl-carousel script -->
+    <script src="js/owl.carousel.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+    <!-- wow script -->
+    <script src="js/wow.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
