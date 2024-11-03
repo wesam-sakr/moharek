@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="226.053" height="211" viewBox="0 0 226.053 211">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#1c608d"/>
+      <stop offset="1" stop-color="#3192d9"/>
+    </linearGradient>
+    <filter id="Icon_ionic-ios-checkmark" x="35.414" y="5.955" width="190.639" height="152" filterUnits="userSpaceOnUse">
+      <feOffset dx="-4" dy="10" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_66150" data-name="Group 66150" transform="translate(-165 -335.5)">
+    <g id="Ellipse_418" data-name="Ellipse 418" transform="translate(165 335.5)" stroke="#2777b2" stroke-width="10" fill="url(#linear-gradient)">
+      <circle cx="105.5" cy="105.5" r="105.5" stroke="none"/>
+      <circle cx="105.5" cy="105.5" r="100.5" fill="none"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 165, 335.5)" filter="url(#Icon_ionic-ios-checkmark)">
+      <path id="Icon_ionic-ios-checkmark-2" data-name="Icon ionic-ios-checkmark" d="M185.146,27.948,170.79,13.185a3.086,3.086,0,0,0-2.284-.979h0a2.962,2.962,0,0,0-2.284.979L66.714,113.428,30.5,77.213a3.154,3.154,0,0,0-4.568,0L11.413,91.732a3.25,3.25,0,0,0,0,4.649l45.676,45.676c2.936,2.936,6.525,4.649,9.543,4.649,4.323,0,8.075-3.181,9.461-4.486h.082L185.227,32.6A3.487,3.487,0,0,0,185.146,27.948Z" transform="translate(36.48 -6.25)" fill="#f8f8f8"/>
+    </g>
+  </g>
+</svg>

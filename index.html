@@ -100,15 +100,6 @@
     <header style="background: url('images/header-bg.png')">
       <div class="container-fluid h-100">
         <div class="content">
-          <style>
-            .image {
-              float: left;
-              width: 55%;
-              height: auto;
-              shape-outside: url("images/head_car.png");
-              shape-margin: 30px;
-            }
-          </style>
           <div>
             <img src="images/head_car.png" alt="" alt="Car" class="image" />
             <h1>وجهتك المتكاملة للسيارات: بيع، شراء، وحجز صيانة</h1>
@@ -1291,6 +1282,76 @@
             </div>
             </div>
         </div>
+    </div>
+
+    <!-- Sell Terms modal -->
+    <div
+      class="modal fade"
+      id="sellTerm_modal"
+      tabindex="-1"
+      aria-labelledby="sellTerm_modalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="sellTerm_modalLabel">
+              شروط الخدمة
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body px-md-4">
+            <p class="mb-3 fw-bold">
+              بعد الموافقة على الشروط فأنت تصرّح تلقائياً بما يلي:
+            </p>
+            <ol class="ps-3">
+              <li>أنك قادر قانونياً على الدخول في عقد ملزِم لبيع السيارة</li>
+              <li>أنك تبلغ من العمر 18 سنة على الأقل</li>
+              <li>أنت المالك الوحيد للسيارة</li>
+              <li>
+                لا أحد لديه أي مطالبات بخصوص السيارة باستثناء شؤون التمويل التي
+                قد تكون عالقة، والتي تكون قد أفصحت عنها لنا في حال وجودها
+              </li>
+              <li>
+                قراءة عداد المسافة في السيارة صحيحة ودقيقة ولم يتم التلاعب بها
+              </li>
+              <li>
+                لقد أفصحت لنا عن جميع الأمور التي يرغب المشتري الحريص بأن
+                يعرفها، كالعيوب التي قد تنطوي عليها السيارة (مثلاً: مشاكل أو
+                أضرار ميكانيكية كبيرة)
+              </li>
+              <li>
+                جميع المعلومات التي زودتنا بها حول السيارة في موعد الفحص أو
+                غيرها هي صحيحة ودقيقة من جميع النواحي
+              </li>
+              <li>السيارة مسجلة في المملكة العربية السعودية.</li>
+            </ol>
+            <p class="my-3 fw-bold">الافتراضات التي سنضعها حول سيارتك:</p>
+            <ol class="ps-3">
+              <li>
+                خالية من الأضرار، بما في ذلك الأضرار الداخلية والميكانيكية
+              </li>
+              <li>توجد نسختان من المفاتيح</li>
+              <li>ليست سيارة مستوردة</li>
+              <li>تستوفي المواصفات المعتمدة في دول مجلس التعاون الخليجي</li>
+              <li>لم تخضع إطلاقاً للشطب من التأمين</li>
+              <li>
+                لم يتم استخدامها أبداً لتعليم القيادة، أو للتأجير، أو الاستئجار
+                الخاص أو كسيارة إسعاف أو سيارة شرطة
+              </li>
+              <li>
+                ليست بحالة بالغة السوء.تستوفي المواصفات المعتمدة في دول مجلس
+                التعاون الخليجي
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- jQuery script -->

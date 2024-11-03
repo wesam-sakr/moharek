@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moharek</title>
+
+    <link rel="icon" type="image/x-icon" href="images/logo-fav.png" />
+
+    <!-- Bootstrap link  -->
+    <link rel="stylesheet" href="css/bootstrap.rtl.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+    />
+
+    <!-- font awesom link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- owl-carousel link -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+
+    <!-- WoW link -->
+    <link rel="stylesheet" href="css/animate.css" />
+
+    <!-- animate link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
+    />
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- -------- loading ----------- -->
+
+    <div id="loading">
+      <div class="loader">
+        <img src="images/logo-fav.png" alt="" />
+      </div>
+    </div>
+
+    <!-- -------- loading ends ----------- -->
+
+    <nav class="navbar navbar-expand-lg navbar-light top-0">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand m-0" href="index.html">
+          <img src="images/logo.svg" alt="" />
+        </a>
+        <div
+          class="collapse navbar-collapse justify-content-between align-items-center"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link"> الرئيسية</a>
+            </li>
+            <li class="nav-item">
+              <a href="services.html" class="nav-link"> الخدمات</a>
+            </li>
+            <li class="nav-item">
+              <a href="cars.html" class="nav-link">السيارات</a>
+            </li>
+            <li class="nav-item">
+              <a href="workshops.html" class="nav-link">مزودي الخدمات</a>
+            </li>
+            <li class="nav-item">
+              <a href="sell_car.html" class="nav-link">بيع سيارتك</a>
+            </li>
+            <li class="nav-item">
+              <a href="check_car.html" class="nav-link">حجز فحص</a>
+            </li>
+            <li class="nav-item">
+              <a href="blogs.html" class="nav-link">المقالات</a>
+            </li>
+            <li class="nav-item">
+              <a href="contact_us.html" class="nav-link">تواصل معنا</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav m-0">
+            <li class="nav-item lang">
+              <a href="" class="nav-link" id="lang">EN</a>
+            </li>
+            <li class="nav-item auth light">
+              <a href="notifi.html" class="nav-link">
+                <i class="fa-regular fa-bell"></i>
+              </a>
+            </li>
+
+            <li class="nav-item auth">
+              <a href="login&register.html" class="nav-link">
+                <i class="fa-regular fa-user"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ==== start breadcrumb ==== -->
+    <nav class="breadcrumb-wrapper" aria-label="breadcrumb">
+      <div class="container-fluid">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">الرئيسية</a></li>
+          <li class="breadcrumb-item active" aria-current="page">بيع سيارتك</li>
+        </ol>
+      </div>
+    </nav>
+    <!-- ==== end breadcrumb ==== -->
+
+    <main>
+      <div class="container-fluid pb-5">
+        <div class="sell_car mb-md-4">
+          <!-- خطوات النموذج -->
+          <div class="steps-container">
+            <div class="step active">
+              <span class="step_num">1</span>
+              <span class="step_name">معلومات سيارتك</span>
+            </div>
+            <div class="step">
+              <span class="step_num">2</span>
+              <span class="step_name">السعر التقديري</span>
+            </div>
+            <div class="step">
+              <span class="step_num">3</span>
+              <span class="step_name">حجز موعد الفحص</span>
+            </div>
+          </div>
+
+          <div class="progress" style="height: 3px">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              style="width: 40%"
+              aria-valuenow="40"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></div>
+          </div>
+
+          <div class="step-part" id="part-1">
+            <h4 class="my-3">ادخل معلوماتك</h4>
+            <form>
+              <div class="row gy-3">
+                <div class="col-12">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="الاسم بالكامل"
+                    required
+                  />
+                </div>
+
+                <div class="col-12">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="رقم الجوال"
+                    required
+                  />
+                </div>
+
+                <div class="col-12">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="whatsappUpdated"
+                    />
+                    <label class="form-check-label" for="whatsappUpdated">
+                      أود استقبال تحديثات طلبي من خلال واتساب
+                    </label>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <select
+                    name="city_id"
+                    class="form-control form-select"
+                    required
+                  >
+                    <option hidden="">مدينة الفحص</option>
+                    <option value="1">الرياض</option>
+                    <option value="2">أبها</option>
+                    <option value="81">احد رفيده</option>
+                    <option value="73">أضم</option>
+                    <option value="4">الاحساء</option>
+                    <option value="5">الباحة</option>
+                    <option value="84">البطحاء</option>
+                    <option value="23">الجبيل</option>
+                    <option value="6">الجوف</option>
+                    <option value="29">الخبر</option>
+                    <option value="36">الخرج</option>
+                    <option value="100">الخرج</option>
+                    <option value="38">الخفجي</option>
+                    <option value="19">الدمام</option>
+                    <option value="56">الدوادمي</option>
+                    <option value="64">الرس</option>
+                    <option value="99">الرس</option>
+                    <option value="7">الطائف</option>
+                    <option value="83">الطريف</option>
+                    <option value="103">الظهران</option>
+                    <option value="78">العلا</option>
+                    <option value="101">العلا</option>
+                    <option value="34">القريات</option>
+                    <option value="8">القصيم</option>
+                    <option value="35">القطيف</option>
+                    <option value="63">القويعية</option>
+                    <option value="9">المدينة</option>
+                    <option value="55">المزاحمية</option>
+                    <option value="74">المندق</option>
+                    <option value="31">النماص</option>
+                    <option value="82">الهفوف</option>
+                    <option value="72">أملج</option>
+                    <option value="30">بيشة</option>
+                    <option value="10">تبوك</option>
+                    <option value="86">ثول</option>
+                    <option value="11">جازان</option>
+                    <option value="12">جدة</option>
+                    <option value="13">حائل</option>
+                    <option value="21">حفر الباطن</option>
+                    <option value="76">خميس مشيط</option>
+                    <option value="79">رفحاء</option>
+                    <option value="33">سكاكا</option>
+                    <option value="104">سيهات</option>
+                    <option value="80">شروره</option>
+                    <option value="32">صبيا</option>
+                    <option value="66">ضبا</option>
+                    <option value="85">ضرما</option>
+                    <option value="75">طبرجل</option>
+                    <option value="77">ظهران الجنوب</option>
+                    <option value="14">عرعر</option>
+                    <option value="15">عسير</option>
+                    <option value="67">عفيف</option>
+                    <option value="16">مكة</option>
+                    <option value="17">نجران</option>
+                    <option value="87">نيوم</option>
+                    <option value="28">وادي الدواسر</option>
+                    <option value="24">ينبع</option>
+                  </select>
+                </div>
+
+                <div class="col-12">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="approveSellTerms"
+                      required
+                    />
+                    <label class="form-check-label" for="approveSellTerms">
+                      <a
+                        role="button"
+                        class="forgot terms"
+                        data-bs-toggle="modal"
+                        data-bs-target="#sellTerm_modal"
+                      >
+                        أوافق على الشروط و الأحكام
+                      </a>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="col-auto ms-auto">
+                  <a
+                    href="sell_car_otp.html"
+                    id="nextButton"
+                    class="main-btn d-block disabled-link"
+                  >
+                    التالي
+                  </a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container-fluid">
+        <div class="footer-content">
+          <a href="#" id="scroll-top">
+            <i class="bi bi-chevron-double-up"></i>
+          </a>
+          <div class="links row justify-content-between">
+            <div class="col-12 col-md-6 mb-4 mb-md-5">
+              <div class="logo">
+                <img src="images/logo.svg" alt="" />
+              </div>
+              <p>
+                محرك هو تطبيق يوفر لك جميع احتياجاتك في عالم السيارات. حمله الآن
+                لتكتشف المزيد من المميزات
+              </p>
+              <div class="apps-btns">
+                <a href="#" class="main-btn">
+                  <img src="images/apple.svg" alt="" />
+                  <div>
+                    <span>حمل الان</span>
+                    <h5>Apple store</h5>
+                  </div>
+                </a>
+                <a href="#">
+                  <img src="images/GooglePlay.png" alt="" />
+                  <div>
+                    <span>حمل الان</span>
+                    <h5>Google play</h5>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <h5 class="links_title">روابط الموقع</h5>
+              <ul>
+                <li>
+                  <a href="index.html">الرئيسية</a>
+                </li>
+                <li>
+                  <a href="about_us.html">من نحن</a>
+                </li>
+                <li>
+                  <a href="cars.html">السيارات </a>
+                </li>
+                <li>
+                  <a href="workshops.html">الورش</a>
+                </li>
+                <li>
+                  <a href="check_car.html">حجز فحص</a>
+                </li>
+                <li>
+                  <a href="cars.html">الإعلانات</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-6 col-md-3">
+              <h5 class="links_title">روابط هامة</h5>
+              <ul>
+                <li>
+                  <a href="services.html"> الخدمات</a>
+                </li>
+                <li>
+                  <a href="contact_us.html"> تواصل معنا</a>
+                </li>
+                <li>
+                  <a href="jobs.html"> الوظائف </a>
+                </li>
+                <li>
+                  <a href="policy.html"> سياسة الخصوصية </a>
+                </li>
+                <li>
+                  <a href="terms.html"> الشروط والأحكام </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="send-email">
+            <div class="row align-items-center">
+              <div class="col-12 col-lg-5 mb-4 mb-lg-0">
+                <p class="justify-content-center justify-content-lg-start">
+                  <i class="bi bi-envelope-open-fill"></i> اكتب بريدك الإلكترونى
+                  وتابع كل جديد
+                </p>
+              </div>
+              <div class="col-12 col-lg-7">
+                <div class="send-email-box">
+                  <input type="text" placeholder="اكتب بريدك الالكترونى" />
+                  <button>متابعة</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyrights">
+        <div class="container-fluid">
+          <a href="https://smartvision4p.com" class="link" target="_blank"> </a>
+          <span>جميع الحقوق حفوظة لموقع سمارت فيجن</span>
+          <img src="images/smart-logo.svg" alt="" />
+        </div>
+      </div>
+    </footer>
+
+    <!-- Sell Terms modal -->
+    <div
+      class="modal fade"
+      id="sellTerm_modal"
+      tabindex="-1"
+      aria-labelledby="sellTerm_modalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="sellTerm_modalLabel">
+              شروط الخدمة
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body px-md-4">
+            <p class="mb-3 fw-bold">
+              بعد الموافقة على الشروط فأنت تصرّح تلقائياً بما يلي:
+            </p>
+            <ol class="ps-3">
+              <li>أنك قادر قانونياً على الدخول في عقد ملزِم لبيع السيارة</li>
+              <li>أنك تبلغ من العمر 18 سنة على الأقل</li>
+              <li>أنت المالك الوحيد للسيارة</li>
+              <li>
+                لا أحد لديه أي مطالبات بخصوص السيارة باستثناء شؤون التمويل التي
+                قد تكون عالقة، والتي تكون قد أفصحت عنها لنا في حال وجودها
+              </li>
+              <li>
+                قراءة عداد المسافة في السيارة صحيحة ودقيقة ولم يتم التلاعب بها
+              </li>
+              <li>
+                لقد أفصحت لنا عن جميع الأمور التي يرغب المشتري الحريص بأن
+                يعرفها، كالعيوب التي قد تنطوي عليها السيارة (مثلاً: مشاكل أو
+                أضرار ميكانيكية كبيرة)
+              </li>
+              <li>
+                جميع المعلومات التي زودتنا بها حول السيارة في موعد الفحص أو
+                غيرها هي صحيحة ودقيقة من جميع النواحي
+              </li>
+              <li>السيارة مسجلة في المملكة العربية السعودية.</li>
+            </ol>
+            <p class="my-3 fw-bold">الافتراضات التي سنضعها حول سيارتك:</p>
+            <ol class="ps-3">
+              <li>
+                خالية من الأضرار، بما في ذلك الأضرار الداخلية والميكانيكية
+              </li>
+              <li>توجد نسختان من المفاتيح</li>
+              <li>ليست سيارة مستوردة</li>
+              <li>تستوفي المواصفات المعتمدة في دول مجلس التعاون الخليجي</li>
+              <li>لم تخضع إطلاقاً للشطب من التأمين</li>
+              <li>
+                لم يتم استخدامها أبداً لتعليم القيادة، أو للتأجير، أو الاستئجار
+                الخاص أو كسيارة إسعاف أو سيارة شرطة
+              </li>
+              <li>
+                ليست بحالة بالغة السوء.تستوفي المواصفات المعتمدة في دول مجلس
+                التعاون الخليجي
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery script -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+    <!-- bootstrap script -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- owl-carousel script -->
+    <script src="js/owl.carousel.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+    <!-- wow script -->
+    <script src="js/wow.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
