@@ -713,7 +713,3 @@ $(document).ready(function () {
   }
   ImgUpload()
 });
-
-$(function () {
-  new WOW().init();
-})
